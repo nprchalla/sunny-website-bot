@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sunny AI – Job Interview Coach</title>
+    <meta
+      name="description"
+      content="Practice job interviews, leadership questions, and behavioral answers with Sunny Reddy AI – Job Interview Coach."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-logo">SR</span>
+          <span>Sunny Reddy AI</span>
+        </a>
+
+        <nav class="nav">
+          <div class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle" type="button">
+              Sunny AI Coaches ▾
+            </button>
+            <div class="dropdown-menu">
+              <a href="comm-coach.html">Communication Skills Coach</a>
+              <a href="life-coach.html">Life &amp; Balance Coach</a>
+              <a href="job-coach.html" class="active-link">Job Interview Coach</a>
+              <a href="support-info.html">Support &amp; Information</a>
+            </div>
+          </div>
+          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="index.html#coaching">Coaching</a>
+          <a class="nav-link" href="index.html#faq">FAQ</a>
+          <a class="nav-link" href="index.html#contact">Contact</a>
+        </nav>
+
+        <a
+          class="nav-cta"
+          href="https://chatgpt.com/g/g-69384f84cea48191b7a18761f790d9ec-sunny-reddy-ai-leadership-communication-coach"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Speak to Sunny Now
+        </a>
+      </div>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="sub-hero">
+      <div class="container sub-hero-inner">
+        <div>
+          <h1>Sunny AI – Job Interview Coach</h1>
+          <p class="hero-subtitle">
+            Use Sunny Reddy AI as a safe place to practice interviews. Simulate questions, refine your answers, and
+            build confidence before the real conversation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESCRIPTION -->
+    <section class="section">
+      <div class="container">
+        <p>
+          Whether you’re interviewing for your first internship or a senior leadership role, Sunny AI can guide you
+          through thoughtful, structured answers that highlight your strengths, values, and real experience.
+        </p>
+        <ul>
+          <li>Mock interview questions tailored to your role or industry.</li>
+          <li>Feedback on how to showcase leadership, teamwork, and resilience.</li>
+          <li>Help thinking through behavioral questions using real examples.</li>
+          <li>Practice explaining career transitions and long-term goals.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CALL OPTIONS -->
+    <section class="section alt">
+      <div class="container">
+        <h2>Ways to Practice with the Job Interview Coach</h2>
+        <div class="call-grid">
+          <div class="call-card">
+            <h3><span class="call-icon">🎯</span> Full Mock Interview</h3>
+            <p>
+              Ask Sunny AI to run a full mock interview and answer out loud. Use follow-up questions to deepen your
+              thinking.
+            </p>
+            <a
+              class="call-btn"
+              href="https://chatgpt.com/g/g-69384f84cea48191b7a18761f790d9ec-sunny-reddy-ai-leadership-communication-coach"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start Mock Interview
+            </a>
+          </div>
+
+          <div class="call-card">
+            <h3><span class="call-icon">📄</span> Answer Drafting in Chat</h3>
+            <p>
+              Type your answers to common questions like “Tell me about yourself” and let Sunny AI help polish them
+              for clarity and impact.
+            </p>
+            <a
+              class="call-btn secondary"
+              href="https://chatgpt.com/g/g-69384f84cea48191b7a18761f790d9ec-sunny-reddy-ai-leadership-communication-coach"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Draft in Chat
+            </a>
+          </div>
+
+          <div class="call-card">
+            <h3><span class="call-icon">🎙️</span> Voice Practice (ChatGPT)</h3>
+            <p>
+              Use the Voice button inside ChatGPT to simulate a real conversation – practice thinking on your feet
+              with Sunny AI.
+            </p>
+            <a
+              class="call-btn"
+              href="https://chatgpt.com/g/g-69384f84cea48191b7a18761f790d9ec-sunny-reddy-ai-leadership-communication-coach"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Use Voice in ChatGPT
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BROWSER VOICE BETA -->
+    <section class="section">
+      <div class="container">
+        <h2>Browser Voice Call (Beta)</h2>
+        <p>
+          This beta feature lets you talk to Sunny Reddy AI directly from this website using your microphone.
+          You’ll need:
+        </p>
+        <ul style="margin-top: 8px; padding-left: 18px; font-size: 0.9rem; color: #c3c9f5;">
+          <li>Microphone permission in your browser</li>
+          <li>Your own OpenAI API key configured on the backend</li>
+          <li>The relay server running on <code>http://localhost:3000</code></li>
+        </ul>
+        <div class="voice-widget">
+          <div class="voice-controls">
+            <button id="start-voice" class="voice-button">Start Sunny Voice Call</button>
+            <button id="stop-voice" class="voice-button secondary">End Call</button>
+          </div>
+          <p id="voice-status" class="voice-status">
+            Not connected. Click “Start Sunny Voice Call” to begin.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="container footer-columns">
+          <div class="footer-col">
+            <h4>Sunny AI Coaches</h4>
+            <ul>
+              <li><a href="comm-coach.html">Communication Skills Coach</a></li>
+              <li><a href="life-coach.html">Life &amp; Balance Coach</a></li>
+              <li><a href="job-coach.html">Job Interview Coach</a></li>
+              <li><a href="support-info.html">Support &amp; Information</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html#about">About Sunny</a></li>
+              <li><a href="index.html#coaching">Coaching Overview</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Sunny Reddy AI</h4>
+            <p class="footer-text">
+              Job Interview coaching helps you present your experience with confidence, clarity, and authenticity.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Connect with Sunny</h4>
+            <ul class="social-links">
+              <li>
+                <a
+                  href="https://www.facebook.com/sunnyforwaynestate/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/sunnyreddywsu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-instagram"></i> Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/Sunnyforwsu" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-x-twitter"></i> X (Twitter)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/sunny-for-wayne-state/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-linkedin-in"></i> LinkedIn – WSU
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/sunny-reddy-a76b4724b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-linkedin-in"></i> LinkedIn – VoIP Office
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© <span id="year"></span> Sunny Reddy AI. All rights reserved.</p>
+        </div>
+      </div>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+      <script src="nav.js"></script>
+      <script src="voice-widget.js"></script>
+    </footer>
+  </body>
+</html>
