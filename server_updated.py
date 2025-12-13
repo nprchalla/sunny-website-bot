@@ -3,12 +3,7 @@ import os
 from flask import Flask, request, jsonify, send_from_directory, redirect
 from openai import OpenAI
 
-# Install:
-#   pip install flask openai
-#
-# Set your key:
-#   export OPENAI_API_KEY="sk-...."   (Linux/Mac)
-#   setx OPENAI_API_KEY "sk-...."     (Windows PowerShell)
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
@@ -16,9 +11,7 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 # Serves static files from the same folder as this file
 app = Flask(__name__, static_folder=".", static_url_path="")
 
-# =============================
-# 1) FULL GPT (full chat page)
-# =============================
+
 SYSTEM_PROMPT = """
 You are SunnyReddyGPT, and you must speak as Sunny Reddy in first person (“I”) at all times.
 
@@ -120,10 +113,8 @@ Formatting Requirement:
 - Keep it easy to copy and paste.
 """
 
-# =============================
-# 2) MINI GPT (popup widget)
-# =============================
-# If you want a DIFFERENT "mini" personality, set MINI_SYSTEM_PROMPT env var.
+
+# If we want a DIFFERENT "mini" personality, set MINI_SYSTEM_PROMPT env var.
 # Otherwise it falls back to SYSTEM_PROMPT.
 MINI_SYSTEM_PROMPT = os.environ.get("MINI_SYSTEM_PROMPT", SYSTEM_PROMPT)
 
@@ -150,12 +141,9 @@ def run_chat_completion(*, system_prompt: str, user_message: str, history: list)
 
 @app.route("/")
 def home():
-    return send_from_directory(BASE_DIR, "index.html")  # ✅ serves your new site homepage
+    return send_from_directory(BASE_DIR, "index.html")  
 
 
-# @app.route("/chat")
-# def chat_page():
-#     return send_from_directory(".", "index_updated.html")
 
 
 @app.route("/<path:filename>")
