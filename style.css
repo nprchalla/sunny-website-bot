@@ -500,3 +500,43 @@ img {
     font-size: 1.6rem;
   }
 }
+
+.contact-container {
+  max-width: 700px;
+}
+
+.contact-card {
+  background: #1f2c62;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.contact-intro {
+  margin-bottom: 2rem;
+  color: #ababab;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-weight: 600;
+}
