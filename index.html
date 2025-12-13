@@ -13,17 +13,29 @@
     <!-- TOP NAVBAR -->
     <header class="site-header">
       <div class="container header-inner">
-        <div class="brand">
+        <a href="index.html" class="brand">
           <span class="brand-logo">SR</span>
           <span>Sunny Reddy AI</span>
-        </div>
+        </a>
+
         <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#features">Coaching</a>
-          <a href="#faq">FAQ</a>
-          <a href="#resources">Resources</a>
-          <a href="#contact">Contact</a>
+          <div class="nav-item dropdown">
+            <button class="nav-link dropdown-toggle" type="button">
+              Sunny AI Coaches ▾
+            </button>
+            <div class="dropdown-menu">
+              <a href="comm-coach.html">Communication Skills Coach</a>
+              <a href="life-coach.html">Life &amp; Balance Coach</a>
+              <a href="job-coach.html" class="active-link">Job Interview Coach</a>
+              <a href="support-info.html">Support &amp; Information</a>
+            </div>
+          </div>
+          <a class="nav-link" href="index.html#about">About</a>
+          <a class="nav-link" href="index.html#coaching">Coaching</a>
+          <a class="nav-link" href="index.html#faq">FAQ</a>
+          <a class="nav-link" href="index.html#contact">Contact</a>
         </nav>
+
         <a
           class="nav-cta"
           href="https://chatgpt.com/g/g-69384f84cea48191b7a18761f790d9ec-sunny-reddy-ai-leadership-communication-coach"
@@ -249,6 +261,7 @@
       <script>
         document.getElementById("year").textContent = new Date().getFullYear();
       </script>
+      <script src="nav.js"></script>
     </footer>
   </body>
 </html>
