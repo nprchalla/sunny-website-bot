@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sunny Reddy AI</title>
+  <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+  <div class="chat-wrapper">
+    <div class="chat-header">
+      <div class="avatar">SR</div>
+      <div class="header-text">
+        <div class="header-title">Sunny Reddy</div>
+        <div class="header-status">
+          <span class="status-dot"></span>
+          <span>Online · AI Assistant</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-body">
+      <div id="chatMessages" class="chat-messages"></div>
+    </div>
+
+    <div class="suggested">
+      <button onclick="sendQuick('Help me sound more confident when I speak.')">
+        How to sound more confident
+      </button>
+      <button onclick="sendQuick('How can I stop saying um and ah in my speech?')">
+        How can I reduce filler words
+      </button>
+      <button onclick="sendQuick('Give me feedback on how I introduce myself.')">
+        Feedback for introductions
+      </button>
+    </div>
+
+    <div class="chat-input-area">
+      <input id="userInput" type="text" placeholder="Type your message..." />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
