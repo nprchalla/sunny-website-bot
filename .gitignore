@@ -4,6 +4,9 @@ node_modules/
 # Environment variables
 .env
 
+# Virtual Environment
+.venv
+
 # ZIP / backups
 *.zip
 sunny-voice-server/node_modules/
