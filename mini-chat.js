@@ -1,21 +1,6 @@
-// mini-chat.js
-// Injects a bottom-right floating mini chatbot onto any page that includes:
-//   <link rel="stylesheet" href="mini-chat.css">
-//   <script src="mini-chat.js" defer></script>
-//
-// Backend expectation (default):
-//   POST /api/chat  JSON: { "message": "..." }
-//   Response JSON:  { "reply": "..." }
-//
-// Optional overrides per page:
-//   window.SUNNY_CHAT_ENDPOINT = "/api/chat";
-//   window.SUNNY_CHAT_NAME = "Sunny";
-//   window.SUNNY_CHAT_SUBTITLE = "Online";
-//   window.SUNNY_CHAT_WELCOME = "Hi! How can I help?";
-
 (() => {
   const ENDPOINT = window.SUNNY_CHAT_ENDPOINT || "/api/chat";
-  const BOT_NAME = window.SUNNY_CHAT_NAME || "Sunny";
+  const BOT_NAME = window.SUNNY_CHAT_NAME || "Sunny Reddy AI";
   const SUBTITLE = window.SUNNY_CHAT_SUBTITLE || "Ask me anything";
   const WELCOME =
     window.SUNNY_CHAT_WELCOME || `Hi! I'm ${BOT_NAME}. How can I help you today?`;
