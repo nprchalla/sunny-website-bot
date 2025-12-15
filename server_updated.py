@@ -113,8 +113,9 @@ def run_chat_completion(*, system_prompt: str, user_message: str, history: list)
 def home():
     return send_from_directory(BASE_DIR, "index.html")  
 
-
-
+@app.route("/chat")
+def chat_page():
+    return send_from_directory(BASE_DIR, "chat.html")
 
 @app.route("/<path:filename>")
 def static_files(filename):
