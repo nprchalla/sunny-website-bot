@@ -15,7 +15,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="mini-chat.css" />
   </head>
   <body>
     <!-- HEADER -->
@@ -255,9 +254,20 @@
       </script>
       <script src="nav.js"></script>
       <script src="voice-widget.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js"></script>
-      <script src="mini-chat.js" defer></script>
     </footer>
+    <script id="delphi-bubble-script">
+  window.delphi = { ...(window.delphi ?? {}) };
+  window.delphi.bubble = {
+    config: "8fdf705c-d0d3-42da-92f8-37ab0f68be99",
+    overrides: {
+      landingPage: "OVERVIEW",
+    },
+    trigger: {
+      color: "#000000",
+    },
+  };
+</script>
+ 
+<script id="delphi-bubble-bootstrap" src="https://embed.delphi.ai/loader.js"></script>
   </body>
 </html>
