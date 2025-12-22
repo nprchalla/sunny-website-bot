@@ -222,9 +222,9 @@ img {
 }
 
 .features-strip {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 24px;
 }
 
 .feature-card {
@@ -232,6 +232,7 @@ img {
   border-radius: 18px;
   padding: 18px 16px;
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.5);
+  flex: 1 1 260px;
 }
 
 .feature-icon {
