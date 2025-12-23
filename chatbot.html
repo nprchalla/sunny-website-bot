@@ -16,8 +16,130 @@
 </head>
 
 <body>
-  <div id="delphi-container"></div>
- 
+  <!-- TOP NAVBAR -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">SR</span>
+        <span>Sunny Reddy AI</span>
+      </a>
+
+      <nav class="nav">
+        <div class="nav-item dropdown">
+          <button class="nav-link dropdown-toggle" type="button">
+            Sunny AI Coaches ▾
+          </button>
+          <div class="dropdown-menu">
+            <a href="comm-coach.html">Communication Skills Coach</a>
+            <a href="life-coach.html">Life &amp; Balance Coach</a>
+            <a href="job-coach.html">Job Interview Coach</a>
+            <a href="support-info.html">Support &amp; Information</a>
+          </div>
+        </div>
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#coaching">Coaching</a>
+        <a class="nav-link" href="index.html#faq">FAQ</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+
+      <!-- href="https://chatgpt.com/g/g-69384f84cea48191b7a18761f790d9ec-sunny-reddy-ai-leadership-communication-coach"-->
+      <a
+        class="nav-cta"
+        href="chatbot.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Speak to Sunny Now
+      </a>
+    </div>
+  </header>
+  
+  <!-- Chatbot gets injected here -->
+  <main class="chat-page">
+    <section class="chat-section">
+      <div class="delphi-wrapper">
+        <div id="delphi-container"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Sunny AI Coaches</h4>
+            <ul>
+              <li><a href="comm-coach.html">Communication Skills Coach</a></li>
+              <li><a href="life-coach.html">Life &amp; Balance Coach</a></li>
+              <li><a href="job-coach.html">Job Interview Coach</a></li>
+              <li><a href="support-info.html">Support &amp; Information</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html#about">About Sunny</a></li>
+              <li><a href="index.html#coaching">Coaching Overview</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Sunny Reddy AI</h4>
+            <p class="footer-text">
+              Use Sunny Reddy AI as a rehearsal space to practice your communication before
+              important conversations and events.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Connect with Sunny</h4>
+            <ul class="social-links">
+              <li>
+                <a href="https://www.facebook.com/sunnyforwaynestate/" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/sunnyreddywsu/" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://x.com/Sunnyforwsu" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-x-twitter"></i> X (Twitter)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/sunny-for-wayne-state/" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-linkedin"></i> LinkedIn – WSU
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/sunny-reddy-a76b4724b/" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-linkedin"></i> LinkedIn – VoIP Office
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© <span id="year"></span> Sunny Reddy AI. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="nav.js"></script>
+  </footer>
+
 <script id="delphi-page-script">
   window.delphi = { ...(window.delphi ?? {}) };
   window.delphi.page = {
@@ -27,7 +149,7 @@
     },
     container: {
       width: "100%",
-      height: "800px",
+      height: "100%",
     },
   };
 </script>
