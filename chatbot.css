@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===============================
    CHATBOT PAGE ONLY
    =============================== */
@@ -223,4 +224,63 @@
   color: #020414;
   font-weight: 600;
   cursor: pointer;
+=======
+/* ===== Base ===== */
+html,
+body {
+  margin: 0;
+}
+
+/* Header remains at top */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Page content flows normally */
+.chat-page {
+  display: block;
+}
+
+/* Chat takes full remaining viewport */
+.chat-section {
+  min-height: calc(100dvh - var(--header-height) - var(--chat-bottom-gap));
+  display: flex;
+  justify-content: center;
+}
+
+/* Width constraint */
+.delphi-wrapper {
+  width: min(90%, 1440px);
+  height: calc(100dvh - var(--header-height) - var(--chat-bottom-gap));
+}
+
+/* Delphi iframe mount */
+#delphi-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  #delphi-container {
+    min-height: 700px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .chat-page {
+    padding: 1rem 0;
+  }
+
+  .delphi-wrapper {
+    width: 95%;
+  }
+
+  #delphi-container {
+    min-height: calc(100dvh - 140px);
+  }
+>>>>>>> 531e75d9b77337b4903a4353a19b3c6b07962183
 }
