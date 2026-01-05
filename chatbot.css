@@ -1,71 +1,33 @@
-/* ==========================================================
-   chatbot.css (FULL-SCREEN DELPHI)
-   - Removes merge-conflict markers (CSS now parses)
-   - Makes Delphi fill the viewport under the header
-   ========================================================== */
+:root {
+  --header-height: 72px; /* must match your navbar height */
+}
 
+/* Ensure the page itself can take full height */
 html, body {
   height: 100%;
-  margin: 0;
 }
 
-/* Make the page layout: header on top, chat fills the rest */
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-/* Header keeps its natural height */
-.site-header {
-  flex: 0 0 auto;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-/* Chat area takes ALL remaining height (removes the black gap) */
+/* Full-page area under the sticky header */
 .chat-page {
-  flex: 1 1 auto;
-  min-height: 0;         /* IMPORTANT: lets child fill height */
-  padding: 0 !important;
-  margin: 0 !important;
+  height: calc(100vh - var(--header-height));
+  margin: 0;
+  padding: 0;
 }
 
-/* Make the container chain have real heights */
 .chat-section,
-.delphi-wrapper,
-#delphi-container {
+.delphi-wrapper {
   height: 100%;
   width: 100%;
-  padding: 0 !important;
   margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Remove any max-width centering that creates a small box */
-.delphi-wrapper {
-  max-width: 100% !important;
-}
-
-/* Delphi injects elements inside #delphi-container — force them to stretch */
-#delphi-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-#delphi-container > * {
-  flex: 1 1 auto;
-  min-height: 0;
+/* Force ElevenLabs widget to fill */
+elevenlabs-convai.sunny-full {
+  display: block !important;
   width: 100% !important;
   height: 100% !important;
-}
 
-/* If Delphi uses an iframe, force it full size */
-#delphi-container iframe {
-  width: 100% !important;
-  height: 100% !important;
-  border: 0 !important;
-  display: block;
+  position: relative !important;
+  inset: auto !important;   /* cancels top/right/bottom/left if any */
 }
