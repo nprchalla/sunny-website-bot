@@ -1,33 +1,50 @@
 :root {
-  --header-height: 72px; /* must match your navbar height */
+  /* If the widget is slightly cut off under the navbar, increase this to 80px or 88px */
+  --header-height: 72px;
 }
 
-/* Ensure the page itself can take full height */
-html, body {
+html,
+body {
   height: 100%;
+  margin: 0;
+}
+
+/* Only affect chatbot page */
+body.chatbot-only {
+  overflow: hidden;
+}
+
+/* Hide floating bubble if it exists on chatbot page */
+body.chatbot-only elevenlabs-convai.sunny-float {
+  display: none !important;
 }
 
 /* Full-page area under the sticky header */
-.chat-page {
+body.chatbot-only .chat-page {
   height: calc(100vh - var(--header-height));
-  margin: 0;
+  width: 100%;
   padding: 0;
+  margin: 0;
 }
 
-.chat-section,
-.delphi-wrapper {
+/* Stretch children fully */
+body.chatbot-only .chat-section,
+body.chatbot-only .delphi-wrapper {
   height: 100%;
   width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
+  padding: 0;
+  margin: 0;
+  display: flex;          /* <-- add */
+  flex-direction: column;
 }
 
-/* Force ElevenLabs widget to fill */
-elevenlabs-convai.sunny-full {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
+/* Make the widget occupy the whole page under the header */
 
-  position: relative !important;
-  inset: auto !important;   /* cancels top/right/bottom/left if any */
+
+/* If a separate floating launcher appears, hide it */
+body.chatbot-only elevenlabs-convai.sunny-float {
+  display: none !important;
 }
+
+
+

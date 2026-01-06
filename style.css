@@ -651,32 +651,3 @@ img {
 .bullet-list li{
   margin: 8px 0;
 }
-
-/* ================================
-   ElevenLabs Widget Styles
-   ================================ */
-
-/* Floating widget ONLY (use on normal pages like index.html) */
-elevenlabs-convai.sunny-float {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 9999;
-  width: 360px;
-  height: 520px;
-  max-width: calc(100vw - 40px);
-  max-height: calc(100vh - 120px);
-  display: block;
-}
-
-/* Make sure fullscreen widget is NOT forced to float by any global rules */
-elevenlabs-convai.sunny-full {
-  position: relative;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  top: auto;
-  display: block;
-  width: 100%;
-}
-
