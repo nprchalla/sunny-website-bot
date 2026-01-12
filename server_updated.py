@@ -1,7 +1,13 @@
 # server_updated.py
 import os
+import uuid
+import requests
 from flask import Flask, request, jsonify, send_from_directory, redirect
 from openai import OpenAI
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -122,25 +128,75 @@ def static_files(filename):
     return send_from_directory(".", filename)
 
 
-@app.route("/api/chat", methods=["POST"])
-def api_chat():
-    data = request.get_json(force=True)
-    user_message = (data.get("message") or "").strip()
-    history = data.get("history", [])
+# @app.route("/api/chat", methods=["POST"])
+# def api_chat():
+#     data = request.get_json(force=True)
+#     user_message = (data.get("message") or "").strip()
+#     history = data.get("history", [])
 
-    if not user_message:
-        return jsonify({"error": "Empty message"}), 400
+#     if not user_message:
+#         return jsonify({"error": "Empty message"}), 400
+
+#     try:
+#         reply = run_chat_completion(
+#             system_prompt=SYSTEM_PROMPT,
+#             user_message=user_message,
+#             history=history,
+#         )
+#         return jsonify({"reply": reply})
+#     except Exception as e:
+#         print("OpenAI error:", e)
+#         return jsonify({"error": "OpenAI API error", "details": str(e)}), 500
+
+@app.route("/api/tavus/conversation", methods=["POST"])
+def api_tavus_conversation():
+    tavus_key = os.environ.get("TAVUS_API_KEY")
+    persona_id = os.environ.get("TAVUS_PERSONA_ID")
+    replica_id = os.environ.get("TAVUS_REPLICA_ID")  # optional depending on your Tavus setup
+
+    if not tavus_key or not persona_id:
+        return jsonify({"error": "Missing TAVUS_API_KEY or TAVUS_PERSONA_ID in .env"}), 500
+
+    session_id = str(uuid.uuid4())
+
+    payload = {
+        "persona_id": persona_id,
+        **({"replica_id": replica_id} if replica_id else {}),
+        # "metadata": {
+        #     "session_id": session_id,
+        #     "page": request.headers.get("Referer", ""),
+        #     "user_agent": request.headers.get("User-Agent", ""),
+        # },
+    }
 
     try:
-        reply = run_chat_completion(
-            system_prompt=SYSTEM_PROMPT,
-            user_message=user_message,
-            history=history,
+        r = requests.post(
+            "https://tavusapi.com/v2/conversations",
+            headers={
+                "Content-Type": "application/json",
+                "x-api-key": tavus_key,
+            },
+            json=payload,
+            timeout=30,
         )
-        return jsonify({"reply": reply})
+
+        data = r.json() if r.content else {}
+
+        if r.status_code >= 400:
+            return jsonify({
+                "error": "Tavus API error",
+                "status": r.status_code,
+                "details": data,
+                "raw": r.text
+            }), r.status_code
+
+        conversation_url = data.get("conversation_url")
+        if not conversation_url:
+            return jsonify({"error": "No conversation_url returned", "details": data}), 500
+
+        return jsonify({"conversation_url": conversation_url, "session_id": session_id})
     except Exception as e:
-        print("OpenAI error:", e)
-        return jsonify({"error": "OpenAI API error", "details": str(e)}), 500
+        return jsonify({"error": "Server error creating Tavus conversation", "details": str(e)}), 500
 
 
 @app.route("/api/mini_chat", methods=["POST"])

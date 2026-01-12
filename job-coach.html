@@ -52,6 +52,8 @@
         >
           Speak to Sunny Now
         </a>
+        <a class="nav-cta open-tavus" href="#">Video Call (Tavus)</a>
+
       </div>
     </header>
 
@@ -247,9 +249,32 @@
 </script>
  
 <script id="delphi-bubble-bootstrap" src="https://embed.delphi.ai/loader.js"></script> -->
+<div id="tavusModal" style="display:none; position:fixed; inset:0; z-index:9999;">
+  <div id="tavusBackdrop" style="position:absolute; inset:0; background:rgba(0,0,0,.75);"></div>
 
+  <div style="position:relative; margin:20px; height:calc(100vh - 40px); background:#0b1020; border-radius:16px; overflow:hidden;">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; background:rgba(255,255,255,.06);">
+      <span style="color:#fff;">Sunny Reddy AI — Live Video</span>
+      <button id="tavusClose" type="button" style="cursor:pointer; padding:6px 10px; border-radius:10px;">✕</button>
+    </div>
+
+    <div style="height:calc(100% - 44px); position:relative;">
+      <div id="tavusLoading" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#c3c9f5;">
+        Starting video…
+      </div>
+
+      <iframe
+        id="tavusFrame"
+        allow="camera; microphone; fullscreen; display-capture"
+        style="width:100%; height:100%; border:none; display:none;"
+      ></iframe>
+    </div>
+  </div>
+</div>
 <!-- ElevenLabs SunnyAI Widget -->
   <elevenlabs-convai class="sunny-float" agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"></elevenlabs-convai>
   <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <script src="tavus.js" defer></script>
+
   </body>
 </html>
