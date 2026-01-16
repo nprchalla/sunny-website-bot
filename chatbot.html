@@ -39,24 +39,39 @@
         <a class="nav-link" href="contact.html">Contact</a>
       </nav>
 
-      <a class="nav-cta" href="chatbot.html">Speak to Sunny Now</a>
+      <!-- IMPORTANT: This button opens ElevenLabs talk-to page -->
+      <a
+        class="nav-cta"
+        href="https://elevenlabs.io/app/talk-to?agent_id=agent_1401ke7ksdgpejdsxgmtf51r5mwq"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Speak to Sunny Now
+      </a>
     </div>
   </header>
 
-  <!-- Full-page ElevenLabs Widget -->
+  <!-- PAGE CONTENT (simple hero like your homepage) -->
   <main class="chat-page">
-    <section class="chat-section">
-      <div class="delphi-wrapper">
-        <elevenlabs-convai
-          class="sunny-full"
-          agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"
-          variant="expanded">
-        </elevenlabs-convai>
+    <section class="section">
+      <div class="container">
+        <h1 style="font-size: 2rem; margin-bottom: 12px;">
+          Talk to Sunny Reddy AI
+        </h1>
+        <p style="max-width: 760px; color: #c3c9f5; margin-bottom: 18px;">
+          Click <strong>Speak to Sunny Now</strong> to open the official voice/chat experience and start your conversation.
+        </p>
+
+        <a
+          class="hero-cta"
+          href="https://elevenlabs.io/app/talk-to?agent_id=agent_1401ke7ksdgpejdsxgmtf51r5mwq"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Speak to Sunny Now
+        </a>
       </div>
     </section>
   </main>
-
-  <!-- Load widget script ONCE, at the end -->
-  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
