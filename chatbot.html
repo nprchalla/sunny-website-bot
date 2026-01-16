@@ -10,17 +10,10 @@
 
   <!-- Chat-only styles -->
   <link rel="stylesheet" href="chatbot.css" />
-
-  <!-- Redirect immediately to the full-page ElevenLabs Talk-to experience -->
-  <script>
-    window.location.replace(
-      "https://elevenlabs.io/app/talk-to?agent_id=agent_1401ke7ksdgpejdsxgmtf51r5mwq"
-    );
-  </script>
 </head>
 
 <body class="chatbot-only">
-  <!-- TOP NAVBAR (will appear only briefly before redirect) -->
+  <!-- TOP NAVBAR -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
@@ -45,16 +38,25 @@
         <a class="nav-link" href="index.html#resources">Resources</a>
         <a class="nav-link" href="contact.html">Contact</a>
       </nav>
+
+      <a class="nav-cta" href="chatbot.html">Speak to Sunny Now</a>
     </div>
   </header>
 
-  <!-- Fallback content if redirect is blocked -->
-<!-- Markdown rendering -->
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer></script>
+  <!-- Full-page ElevenLabs Widget -->
+  <main class="chat-page">
+    <section class="chat-section">
+      <div class="delphi-wrapper">
+        <elevenlabs-convai
+          class="sunny-full"
+          agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"
+          variant="expanded">
+        </elevenlabs-convai>
+      </div>
+    </section>
+  </main>
 
-
-<script src="chat.js"></script>
-
+  <!-- Load widget script ONCE, at the end -->
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
