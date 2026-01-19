@@ -721,3 +721,51 @@ img {
     text-align: center;
   }
 }
+
+/* =========================
+   Mobile Header / Top Bar Fix
+   ========================= */
+
+@media (max-width: 768px) {
+  .site-header {
+    padding-bottom: 8px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* Center the logo cleanly */
+  .brand {
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  /* Navigation wraps and tightens */
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 4px 0;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+
+  /* PRIMARY CTA — full width */
+  .nav-cta {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.95rem;
+  }
+
+  /* HIDE secondary CTA on mobile */
+  .nav-cta + .nav-cta {
+    display: none;
+  }
+}
