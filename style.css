@@ -651,3 +651,73 @@ img {
 .bullet-list li{
   margin: 8px 0;
 }
+
+/* =========================
+   Mobile Navbar Fix
+   ========================= */
+
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .brand {
+    justify-content: center;
+    font-size: 1.15rem;
+  }
+
+  .nav {
+    flex: none;
+    justify-content: center;
+    flex-wrap: wrap;        /* key fix */
+    gap: 14px;              /* reduce spacing */
+    padding-bottom: 8px;
+  }
+
+  .nav-cta {
+    margin-left: 0;
+    width: 100%;            /* button becomes full width */
+    text-align: center;
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  /* Dropdown menu should not fall off-screen on mobile */
+  .dropdown-menu {
+    left: 0;
+    right: 0;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 36px 0 44px;
+  }
+
+  .hero-right h1 {
+    font-size: 1.55rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
