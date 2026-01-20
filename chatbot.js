@@ -3,6 +3,8 @@ import { Conversation } from "https://esm.sh/@elevenlabs/client@0.13.0";
 
 const messagesEl = document.getElementById("messages");
 const statusText = document.getElementById("statusText");
+const resp = await fetch("/api/elevenlabs/signed-url");
+const signedUrl = await resp.text();
 
 const connectBtn = document.getElementById("connectBtn");
 const endBtn = document.getElementById("endBtn");
@@ -64,10 +66,15 @@ function setCallMode(on) {
 }
 
 async function newSession({ audioOn }) {
+  // ✅ If we're starting a CALL session, ask mic permission first
+  if (audioOn) {
+    await navigator.mediaDevices.getUserMedia({ audio: true });
+  }
+
   // Start a brand-new session each time this is called
   const resp = await fetch("/api/elevenlabs/signed-url");
   if (!resp.ok) throw new Error("Failed to get signed URL from backend");
-  const signedUrl = await resp.text();
+  const signedUrl = (await resp.text()).trim();
 
   conversation = await Conversation.startSession({
     signedUrl,
@@ -80,6 +87,16 @@ async function newSession({ audioOn }) {
       callBtn.disabled = false;
       sendBtn.disabled = false;
       textInput.disabled = false;
+
+      // ✅ Enforce audio/mic state again on connect
+      // (helps if ElevenLabs plays greeting instantly)
+      if (audioOn) {
+        try { await conversation.setVolume({ volume: 1.0 }); } catch {}
+        try { conversation.setMicMuted(false); } catch {}
+      } else {
+        try { await conversation.setVolume({ volume: 0.0 }); } catch {}
+        try { conversation.setMicMuted(true); } catch {}
+      }
     },
 
     onDisconnect: () => {
@@ -123,7 +140,7 @@ async function newSession({ audioOn }) {
     }
   });
 
-  // Apply mode immediately (prevents greeting audio in chat mode)
+  // ✅ Apply mode immediately after session is created (prevents greeting audio in chat mode)
   if (audioOn) {
     try { await conversation.setVolume({ volume: 1.0 }); } catch {}
     try { conversation.setMicMuted(false); } catch {}
@@ -132,9 +149,6 @@ async function newSession({ audioOn }) {
     try { conversation.setMicMuted(true); } catch {}
   }
 }
-
-
-
 
 async function startConversation() {
   // CHAT MODE: no mic permission needed, no audio
