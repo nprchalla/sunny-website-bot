@@ -10,10 +10,17 @@
 
   <!-- Chat-only styles -->
   <link rel="stylesheet" href="chatbot.css" />
+
+  <!-- Redirect immediately to the full-page ElevenLabs Talk-to experience -->
+  <script>
+    window.location.replace(
+      "https://elevenlabs.io/app/talk-to?agent_id=agent_1401ke7ksdgpejdsxgmtf51r5mwq"
+    );
+  </script>
 </head>
 
 <body class="chatbot-only">
-  <!-- TOP NAVBAR -->
+  <!-- TOP NAVBAR (will appear only briefly before redirect) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
@@ -38,39 +45,16 @@
         <a class="nav-link" href="index.html#resources">Resources</a>
         <a class="nav-link" href="contact.html">Contact</a>
       </nav>
-
-      <!-- SAME TAB navigation -->
-      <a
-        class="nav-cta"
-        href="https://elevenlabs.io/app/talk-to?agent_id=agent_1401ke7ksdgpejdsxgmtf51r5mwq"
-      >
-        Speak to Sunny Now
-      </a>
     </div>
   </header>
 
-  <!-- PAGE CONTENT -->
-  <main class="chat-page">
-    <section class="section">
-      <div class="container">
-        <h1 style="font-size: 2rem; margin-bottom: 12px;">
-          Talk to Sunny Reddy AI
-        </h1>
+  <!-- Fallback content if redirect is blocked -->
+<!-- Markdown rendering -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.11/dist/purify.min.js" defer></script>
 
-        <p style="max-width: 760px; color: #c3c9f5; margin-bottom: 18px;">
-          Click <strong>Speak to Sunny Now</strong> to start a live voice or chat
-          conversation with Sunny Reddy AI.
-        </p>
 
-        <!-- SAME TAB button -->
-        <a
-          class="hero-cta"
-          href="https://elevenlabs.io/app/talk-to?agent_id=agent_1401ke7ksdgpejdsxgmtf51r5mwq"
-        >
-          Speak to Sunny Now
-        </a>
-      </div>
-    </section>
-  </main>
+<script src="chat.js"></script>
+
 </body>
 </html>
