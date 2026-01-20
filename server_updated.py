@@ -2,7 +2,7 @@
 import os
 import uuid
 import requests
-from flask import Flask, request, jsonify, send_from_directory, redirect
+from flask import Flask, request, jsonify, send_from_directory, redirect, make_response
 from openai import OpenAI
 from dotenv import load_dotenv
 
@@ -197,6 +197,49 @@ def api_tavus_conversation():
         return jsonify({"conversation_url": conversation_url, "session_id": session_id})
     except Exception as e:
         return jsonify({"error": "Server error creating Tavus conversation", "details": str(e)}), 500
+
+@app.route("/api/elevenlabs/signed-url", methods=["GET"])
+def elevenlabs_signed_url():
+    """
+    Returns a signed WebSocket URL for the ElevenLabs agent.
+    IMPORTANT: Keeps ELEVENLABS_API_KEY on the server (never exposed to browser).
+    Docs: get-signed-url endpoint :contentReference[oaicite:4]{index=4}
+    """
+    api_key = os.environ.get("ELEVENLABS_API_KEY")
+    agent_id = os.environ.get("ELEVENLABS_AGENT_ID")
+
+    if not api_key or not agent_id:
+        return jsonify({"error": "Missing ELEVENLABS_API_KEY or ELEVENLABS_AGENT_ID in .env"}), 500
+
+    url = f"https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id={agent_id}"
+
+    try:
+        r = requests.get(url, headers={"xi-api-key": api_key}, timeout=30)
+
+        if r.status_code >= 400:
+            return jsonify({
+                "error": "ElevenLabs API error",
+                "status": r.status_code,
+                "details": r.text
+            }), r.status_code
+
+        data = r.json() if r.content else {}
+        signed_url = data.get("signed_url")
+        if not signed_url:
+            return jsonify({"error": "No signed_url returned", "details": data}), 500
+
+        # Return plain text because the JS SDK examples use response.text() :contentReference[oaicite:5]{index=5}
+        resp = make_response(signed_url, 200)
+        resp.mimetype = "text/plain"
+
+        # Basic CORS (so chatbot.html can call this endpoint)
+        allowed = os.environ.get("ALLOWED_ORIGIN", "*")
+        resp.headers["Access-Control-Allow-Origin"] = allowed
+        resp.headers["Vary"] = "Origin"
+        return resp
+
+    except Exception as e:
+        return jsonify({"error": "Server error getting signed URL", "details": str(e)}), 500
 
 
 @app.route("/api/mini_chat", methods=["POST"])
