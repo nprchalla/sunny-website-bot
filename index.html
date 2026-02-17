@@ -1,405 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Sunny Reddy AI – Story, Leadership & Public Service</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="description"
-      content="Explore Sunny Reddy’s story, leadership, entrepreneurship, public service, and community impact — and practice conversations using Sunny Reddy AI."
+        name="description"
+        content="Explore Sunny Reddy's story, leadership, entrepreneurship, public service, 
+        and community impact — and practice conversations using Sunny Reddy AI."
     />
+    <title>Sunny Reddy - Entrepreneur, Leader, Public Servant, Philanthropist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Alegreya+SC:wght@400;500;700;900&family=Alegreya:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+</head>
 
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
-    <!-- TOP NAVBAR -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="index.html" class="brand">
-          <span class="brand-logo">SR</span>
-          <span>Sunny Reddy AI</span>
-        </a>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <div class="logo__icon">SR</div>
+                <!-- <div class="logo__text">Sunny Reddy</div> -->
+            </a>
 
-        <nav class="nav">
-          <div class="nav-item dropdown">
-            <button class="nav-link dropdown-toggle" type="button">
-              Sunny’s Playbooks ▾
+            <!-- Desktop Navigation -->
+            <nav class="nav">
+                <a href="about.html" class="nav__link">About</a>
+                <a href="#playbooks" class="nav__link nav__link--dropdown">Playbooks</a>
+                <a href="#contact" class="nav__link">Contact</a>
+                <a href="#speak" class="btn btn--primary">Speak with Sunny</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <div class="dropdown-menu">
-              <a href="comm-coach.html">Entrepreneurship Blueprint</a>
-              <a href="life-coach.html">Personal Growth Systems</a>
-              <a href="job-coach.html">Career Strategy (Sunny’s Way)</a>
-              <a href="support-info.html">Sunny’s Principles</a>
-            </div>
-          </div>
-          <a class="nav-link" href="index.html#about">About</a>
-          <a class="nav-link" href="index.html#faq">FAQ</a>
-          <a class="nav-link" href="index.html#resources">Resources</a>
-          <a class="nav-link active-link" href="contact.html">Contact</a>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <a href="#about" class="mobile-nav__link">About</a>
+            <a href="#playbooks" class="mobile-nav__link">Playbooks</a>
+            <a href="#contact" class="mobile-nav__link">Contact</a>
+            <a href="#speak" class="mobile-nav__link">Speak with Sunny</a>
         </nav>
-
-        <a
-          class="nav-cta"
-          href="chatbot.html"
-          rel="noopener noreferrer"
-        >
-          Speak to Sunny Now
-        </a>
-        <a class="nav-cta open-tavus" href="#">Video Call (Tavus)</a>
-
-      </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-left">
-        <div class="hero-photo-card">
-          <img src="images/sunny.png" alt="Sunny Reddy" class="hero-photo" />
-        </div>
-      </div>
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="container hero__container">
+                <!-- Left Content -->
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        <span class="text-underline-accent">Sunny Reddy</span>
+                    </h1>
+                    
+                    <h2 class="hero__headline">
+                        Entrepreneur<br>
+                        Leader<br>
+                        Public Servant<br>
+                        Philanthropist
+                    </h2>
+                    
+                    <p class="hero__subtitle">Leadership You Can Practice</p>
+                    
+                    <p class="hero__description">
+                        Learn the story behind Sunny Reddy's work in entrepreneurship, 
+                        community impact, and public service — and step into real 
+                        conversations with his AI counterpart.
+                    </p>
+                    
+                    <a href="#sunny-ai" class="btn btn--primary">Access SunnyAI</a>
+                </div>
 
-      <div class="hero-right">
-        <h1>Sunny Reddy: Builder, Leader, Public Servant</h1>
-        <p class="hero-subtitle">
-          Learn the story behind Sunny’s leadership — entrepreneurship, community impact, and public service —
-          and use Sunny Reddy AI to practice the conversations that matter most.
-        </p>
-
-        <a
-          class="hero-cta"
-          href="chatbot.html"
-          rel="noopener noreferrer"
-        >
-          Speak to Sunny Now
-        </a>
-
-        <p class="hero-note">
-          Use this site to explore Sunny’s work and priorities — then open the AI coach to rehearse speeches,
-          interviews, leadership messaging, and tough Q&amp;A.
-        </p>
-      </div>
-    </div>
-  </section>
-  
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2>Who is Sunny Reddy?</h2>
-
-        <p>
-          Sunny Reddy is a Michigan-based entrepreneur and public leader who serves as an at-large member of the Wayne State
-          University Board of Governors. He assumed office on January 1, 2025, after winning the November 5, 2024 general
-          election, with a term that runs through December 31, 2032. He also serves as a Co-Chair of the Michigan Republican Party,
-          where he focuses on leadership development, community engagement, and building a strong future for Michigan.
-        </p>
-
-        <div class="features-strip" style="margin-top: 18px;">
-          <div class="feature-card">
-            <div class="feature-icon">🏛️</div>
-            <h3>Public Service</h3>
-            <p>
-              As a Wayne State University governor, Sunny focuses on strengthening student experience and building long-term
-              institutional success through clear priorities and practical execution.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">🚀</div>
-            <h3>Entrepreneurship</h3>
-            <p>
-              Sunny describes himself as an entrepreneur who has founded and grown businesses in Michigan, bringing a builder’s
-              mindset shaped by real-world decision-making and accountability.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">🤝</div>
-            <h3>Community & Giving Back</h3>
-            <p>
-              In his public statements, Sunny highlights consistent community support, especially during crisis moments—through
-              relief efforts and local service initiatives.
-            </p>
-          </div>
-        </div>
-
-        <h3 style="margin-top: 28px;">Quick Facts</h3>
-        <ul class="bullet-list">
-          <li><strong>Role:</strong> At-large member, Wayne State University Board of Governors</li>
-          <li><strong>Elected:</strong> November 5, 2024</li>
-          <li><strong>Term:</strong> January 1, 2025 – December 31, 2032</li>
-          <li><strong>Education:</strong> Wayne State University (degree in 1994); publicly stated Master’s in Chemical Engineering</li>
-          <li><strong>Professional background:</strong> Entrepreneur (as listed in public election and profile materials)</li>
-        </ul>
-
-        <h3 style="margin-top: 28px;">Publicly Stated Priorities</h3>
-        <p style="color:#c3c9f5;">
-          In his published candidate responses, Sunny emphasized these focus areas for his time on the board:
-        </p>
-
-        <div class="features-strip" style="margin-top: 14px;">
-          <div class="feature-card">
-            <div class="feature-icon">🔬</div>
-            <h3>STEM & Innovation</h3>
-            <p>
-              Support for science, technology, engineering, and math through strong programs, modern facilities,
-              and a commitment to forward-looking research and learning environments.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">🎓</div>
-            <h3>Affordable Education</h3>
-            <p>
-              A focus on keeping education accessible by emphasizing reasonable tuition pathways and robust
-              financial aid support for students.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>Campus Safety</h3>
-            <p>
-              A commitment to improving safety by working with community stakeholders and campus partners so students
-              can learn in a secure environment.
-            </p>
-          </div>
-        </div>
-
-        <h3 style="margin-top: 28px;">The Person Behind the Work</h3>
-        <p>
-          In his public profile and candidate survey responses, Sunny shares that family plays a central role in his life and
-          that his perspective on education was shaped by being a Wayne State student himself. He also describes his community
-          involvement through philanthropic efforts, particularly in areas like relief support and helping families in need.
-        </p>
-
-        <p style="color:#c3c9f5;">
-          Note: The site’s AI experience is designed to reflect Sunny’s publicly shared values and leadership approach—helping
-          visitors practice communication, decision-making, and execution with clarity and confidence.
-        </p>
-      </div>
-    </section>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="section alt">
-      <div class="container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false">
-          <span>What can I ask Sunny Reddy AI?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" hidden>
-            <p>
-               You can ask about communication, leadership, university life, alumni engagement, entrepreneurship, community service, philanthropy, and more.
-            </p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" type="button" aria-expanded="false">
-          <span>Is this the real Sunny?</span>
-          <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a" hidden>
-            <p>
-              This is an AI coach modeled after Sunny Reddy background and values. It does not replace real-life conversations but gives you instant guidance 24/7.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESOURCES SECTION -->
-    <section id="resources" class="section">
-      <div class="container">
-        <h2>Resources</h2>
-        <p>Catch up on Sunny Reddy's videos and written content.</p>
-
-        <!-- VIDEO LINKS -->
-        <div class="resources-block">
-          <h3>Video Resources</h3>
-          <ul class="bullet-list">
-            <li>
-              <a href="https://www.youtube.com/@SunnyReddyforWayneState" target="_blank" rel="noopener noreferrer">
-                Sunny Reddy for Wayne State (YouTube)
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/shorts/BQDlI4Jc5PI" target="_blank" rel="noopener noreferrer">
-                Don’t Invest in Products—Invest in People
-              </a>
-            </li>  
-            <li>
-              <a href="https://www.youtube.com/shorts/XSIMBRRdhoU" target="_blank" rel="noopener noreferrer">
-                Sunny Reddy on scaling, leadership & business wisdom (shorts)
-              </a>
-            </li>   
-            <li>
-              <a href="https://www.youtube.com/watch?v=_BJittuSq28" target="_blank" rel="noopener noreferrer">
-                Sunny Reddy with Dave Niffin: building community in Troy.
-              </a>
-            </li>     
-            <li>
-              <a href="https://www.youtube.com/watch?v=b8B03JvOiKg" target="_blank" rel="noopener noreferrer">
-                How $1000 and a dream changed my life.
-              </a>
-            </li>    
-          </ul>
-        </div>
-
-        <!-- ARTICLES -->
-        <div class="resources-block">
-          <h3>Articles & Guides</h3>
-          <ul class="bullet-list">
-            <li>
-              <a href="https://www.financialexpress.com/world-news/us-news/who-is-sunny-reddy-indian-american-entrepreneur-elected-as-michigan-gop-co-chair/4069783/" target="_blank" rel="noopener noreferrer">
-                Who is Sunny Reddy? Indian-American entrepreneur elected as Michigan GOP co-chair.
-              </a>
-            </li>
-            <li>
-              <a href="https://today.wayne.edu/news/2025/12/19/today-at-wayne-2025-year-in-review-67801" target="_blank" rel="noopener noreferrer">
-                Wayne State Today (WSU official news)
-              </a>
-            </li>
-            <li>
-              <a href="https://ballotpedia.org/Sunny_Reddy" target="_blank" rel="noopener noreferrer">
-                Ballotpedia Election Profile
-              </a>
-            </li>
-            <li>
-              <a href="https://www.newsfromthestates.com/article/wayne-state-university-board-election-features-2-incumbents-defending-their-seats" target="_blank" rel="noopener noreferrer">
-                Michigan Advance / States Newsroom
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="footer-columns">
-            <div class="footer-col">
-              <h4>Sunny’s Playbooks</h4>
-              <ul>
-                <li><a href="comm-coach.html">Entrepreneurship Blueprint</a></li>
-                <li><a href="life-coach.html">Personal Growth Systems</a></li>
-                <li><a href="job-coach.html">Career Strategy (Sunny’s Way)</a></li>
-                <li><a href="support-info.html">Sunny’s Principles</a></li>
-              </ul>
+                <!-- Right Image -->
+                <div class="hero__image">
+                    <img src="./src/assets/images/hero-image.jpg" alt="Sunny Reddy speaking at Wayne State University">
+                </div>
             </div>
+        </section>
 
-            <div class="footer-col">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><a href="index.html#about">About Sunny</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
-                <li><a class="nav-link" href="index.html#resources">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
+        <!-- Additional sections will go here -->
+    </main>
 
-            <div class="footer-col">
-              <h4>Sunny Reddy AI</h4>
-              <p class="footer-text">
-                Use Sunny Reddy AI as a rehearsal space to practice your communication before
-                important conversations and events.
-              </p>
-            </div>
-
-            <div class="footer-col">
-              <h4>Connect with Sunny</h4>
-              <ul class="social-links">
-                <li>
-                  <a href="https://www.facebook.com/sunnyforwaynestate/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-facebook"></i> Facebook
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/sunnyreddywsu/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-instagram"></i> Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="https://x.com/Sunnyforwsu" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-x-twitter"></i> X (Twitter)
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/company/sunny-for-wayne-state/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn – WSU
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/sunny-reddy-a76b4724b/" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn – VoIP Office
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="footer-bottom">
-            <p>© <span id="year"></span> Sunny Reddy AI. All rights reserved.</p>
-          </div>
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-widget__trigger" aria-label="Open chat">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </button>
+        
+        <div class="chat-widget__window">
+            <!-- Chat interface will be built here -->
         </div>
-      </div>
-
-      <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
-      <script src="nav.js"></script>
-    </footer>
-    <!-- <script id="delphi-bubble-script">
-  window.delphi = { ...(window.delphi ?? {}) };
-  window.delphi.bubble = {
-    config: "8fdf705c-d0d3-42da-92f8-37ab0f68be99",
-    overrides: {
-      landingPage: "OVERVIEW",
-    },
-    trigger: {
-      color: "#000000",
-    },
-  };
-</script>
- 
-<script id="delphi-bubble-bootstrap" src="https://embed.delphi.ai/loader.js"></script> -->
-<!-- Tavus Fullscreen Modal -->
-<div id="tavusModal" style="display:none; position:fixed; inset:0; z-index:9999;">
-  <div id="tavusBackdrop" style="position:absolute; inset:0; background:rgba(0,0,0,.75);"></div>
-
-  <div style="position:relative; margin:20px; height:calc(100vh - 40px); background:#0b1020; border-radius:16px; overflow:hidden;">
-    <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 12px; background:rgba(255,255,255,.06);">
-      <span style="color:#fff;">Sunny Reddy AI — Live Video</span>
-      <button id="tavusClose" type="button" style="cursor:pointer; padding:6px 10px; border-radius:10px;">✕</button>
     </div>
 
-    <div style="height:calc(100% - 44px); position:relative;">
-      <div id="tavusLoading" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#c3c9f5;">
-        Starting video…
-      </div>
-
-      <iframe
-        id="tavusFrame"
-        allow="camera; microphone; fullscreen; display-capture"
-        style="width:100%; height:100%; border:none; display:none;"
-      ></iframe>
-    </div>
-  </div>
-</div>
-
-<!-- ElevenLabs SunnyAI Widget -->
-  <elevenlabs-convai class="sunny-float" agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"></elevenlabs-convai>
-  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-  <script src="tavus.js" defer></script>
-  <script src="faq.js" defer></script>
-
-  </body>
+    <script src="./src/js/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,266 @@
+@use 'variables' as *;
+
+// Buttons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-size: $text-base;
+  font-weight: $weight-semibold;
+  border-radius: $radius-md;
+  transition: all $transition-base;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 2px solid transparent;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  &--primary {
+    background-color: $color-accent-primary;
+    color: $color-bg-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: $color-accent-secondary;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+    }
+  }
+  
+  &--outline {
+    background-color: transparent;
+    border-color: $color-accent-primary;
+    color: $color-accent-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: $color-accent-primary;
+      color: $color-bg-primary;
+    }
+  }
+  
+  &--ghost {
+    background-color: transparent;
+    color: $color-text-primary;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+  
+  &--sm {
+    padding: 0.625rem 1.5rem;
+    font-size: $text-sm;
+  }
+}
+
+// Accordion
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  max-width: 800px;
+  
+  &__item {
+    background-color: $color-bg-secondary;
+    border: 1px solid $border-soft;
+    border-radius: $radius-md;
+    overflow: hidden;
+  }
+  
+  &__header {
+    width: 100%;
+    padding: $spacing-lg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    color: $color-text-primary;
+    font-size: $text-lg;
+    font-weight: $weight-semibold;
+    cursor: pointer;
+    transition: background-color $transition-base;
+    text-align: left;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+  
+  &__icon {
+    font-size: $text-2xl;
+    color: $color-accent-primary;
+    transition: transform $transition-base;
+    
+    .is-open & {
+      transform: rotate(45deg);
+    }
+  }
+  
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-slow;
+    
+    &.is-open {
+      max-height: 500px;
+    }
+    
+    p {
+      padding: 0 $spacing-lg $spacing-lg;
+      color: $color-text-muted;
+      line-height: 1.7;
+    }
+  }
+}
+
+// Chat Widget (bottom right)
+.chat-widget {
+  position: fixed;
+  bottom: $spacing-lg;
+  right: $spacing-lg;
+  z-index: $z-chat-widget;
+  
+  &__trigger {
+    width: 60px;
+    height: 60px;
+    border-radius: $radius-full;
+    background-color: $color-accent-primary;
+    color: $color-bg-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+    transition: all $transition-base;
+    border: 3px solid $color-bg-primary;
+    
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5);
+    }
+    
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  
+  &__window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background-color: $color-bg-secondary;
+    border-radius: $radius-lg;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid $border-soft;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    
+    &.is-open {
+      display: flex;
+    }
+    
+    @media (max-width: $breakpoint-sm) {
+      width: calc(100vw - 2rem);
+      height: 80vh;
+    }
+  }
+}
+
+// Card
+.card {
+  background-color: $color-bg-secondary;
+  border: 1px solid $border-soft;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  
+  &--hover {
+    transition: all $transition-base;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      border-color: $color-accent-primary;
+    }
+  }
+}
+
+// Mobile Menu Toggle
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+  
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: $color-text-primary;
+    border-radius: 2px;
+    transition: all $transition-base;
+  }
+  
+  &.is-active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 7px);
+    }
+    
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  }
+}
+
+// Mobile Navigation
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background-color: rgba(26, 15, 10, 0.98);
+  backdrop-filter: blur(10px);
+  padding: $spacing-lg;
+  border-bottom: 1px solid $border-soft;
+  
+  &.is-open {
+    display: block;
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    display: none !important;
+  }
+  
+  &__link {
+    display: block;
+    padding: $spacing-sm 0;
+    color: $color-text-primary;
+    font-size: $text-lg;
+    border-bottom: 1px solid $border-soft;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    &:hover {
+      color: $color-accent-primary;
+    }
+  }
+}
