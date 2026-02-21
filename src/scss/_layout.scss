@@ -75,6 +75,11 @@
   }
 }
 
+// Active nav link state
+.nav__link--active {
+  color: $color-accent-primary;
+}
+
 // Hero Section
 .hero {
   padding-top: 140px;
@@ -365,5 +370,122 @@
     font-weight: $weight-semibold;
     margin-bottom: $spacing-md;
     color: $color-text-primary;
+  }
+}
+
+// Contact Page
+.contact-section {
+  padding-top: 140px;
+  padding-bottom: $spacing-3xl;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+
+  &__container {
+    display: grid;
+    gap: $spacing-3xl;
+    align-items: start;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-3xl;
+    }
+  }
+
+  &__left {
+    @media (min-width: $breakpoint-lg) {
+      padding-top: $spacing-sm;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $text-3xl;
+    line-height: 1.2;
+    margin-bottom: $spacing-lg;
+    color: $color-text-primary;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: $text-4xl;
+    }
+  }
+
+  &__description {
+    color: $color-text-muted;
+    font-size: $text-lg;
+    line-height: 1.7;
+    margin-bottom: $spacing-md;
+    max-width: 480px;
+  }
+
+  &__subtext {
+    color: $color-text-muted;
+    font-size: $text-base;
+    line-height: 1.7;
+    margin-bottom: $spacing-3xl;
+    max-width: 480px;
+  }
+}
+
+// Social icons
+.contact-social {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-top: $spacing-xl;
+
+  &__link {
+    width: 44px;
+    height: 44px;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $transition-base, box-shadow $transition-base;
+    color: #fff;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    &--facebook {
+      background-color: #1877f2;
+    }
+
+    &--instagram {
+      background: transparent;
+      border: 2px solid $color-text-primary;
+      color: $color-text-primary;
+
+      &:hover {
+        border-color: $color-accent-primary;
+        color: $color-accent-primary;
+      }
+    }
+
+    &--x {
+      background: transparent;
+      color: $color-text-primary;
+      border: none;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        color: $color-accent-primary;
+      }
+    }
+
+    &--linkedin {
+      background-color: #0a66c2;
+    }
   }
 }

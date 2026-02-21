@@ -264,3 +264,201 @@
     }
   }
 }
+
+// Contact Form
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__label {
+    font-family: $font-heading;
+    font-size: $text-lg;
+    color: $color-text-primary;
+    font-weight: $weight-semibold;
+  }
+
+  &__required {
+    font-family: $font-primary;
+    font-size: $text-sm;
+    font-weight: $weight-normal;
+    color: $color-text-muted;
+    margin-left: 2px;
+  }
+
+  &__sublabel {
+    font-size: $text-sm;
+    color: $color-text-muted;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  &__name-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-md;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    background-color: #d1cfc9;
+    border: 2px solid transparent;
+    border-radius: $radius-md;
+    padding: 0.75rem 1rem;
+    font-family: $font-primary;
+    font-size: $text-base;
+    color: #1a0f0a;
+    width: 100%;
+    transition: border-color $transition-base, background-color $transition-base;
+    outline: none;
+
+    &::placeholder {
+      color: rgba(26, 15, 10, 0.4);
+    }
+
+    &:focus {
+      border-color: $color-accent-primary;
+      background-color: #e5e2db;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+
+    &--full {
+      width: 100%;
+    }
+  }
+
+  &__textarea {
+    background-color: #d1cfc9;
+    border: 2px solid transparent;
+    border-radius: $radius-md;
+    padding: 0.75rem 1rem;
+    font-family: $font-primary;
+    font-size: $text-base;
+    color: #1a0f0a;
+    width: 100%;
+    resize: vertical;
+    min-height: 160px;
+    transition: border-color $transition-base, background-color $transition-base;
+    outline: none;
+    line-height: 1.6;
+
+    &::placeholder {
+      color: rgba(26, 15, 10, 0.4);
+    }
+
+    &:focus {
+      border-color: $color-accent-primary;
+      background-color: #e5e2db;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+  }
+
+  &__submit {
+    align-self: flex-start;
+    position: relative;
+    min-width: 160px;
+
+    .contact-form__btn-text {
+      transition: opacity $transition-base;
+    }
+  }
+
+  // Spinner inside the button
+  &__btn-spinner {
+    display: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(26, 15, 10, 0.3);
+    border-top-color: $color-bg-primary;
+    border-radius: $radius-full;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 0.7s linear infinite;
+  }
+
+  // Input error state
+  &__input,
+  &__textarea {
+    &.has-error {
+      border-color: #ef4444;
+      background-color: #f9e0e0;
+
+      &:focus {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+      }
+    }
+  }
+
+  // Success banner
+  &__success {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    background-color: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    margin-bottom: $spacing-lg;
+    color: #86efac;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity $transition-base, transform $transition-base;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      color: #4ade80;
+    }
+
+    p {
+      margin: 0;
+      font-size: $text-base;
+    }
+  }
+
+  // Error banner
+  &__error {
+    background-color: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    margin-bottom: $spacing-lg;
+    color: #fca5a5;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity $transition-base, transform $transition-base;
+
+    &.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    p {
+      margin: 0;
+      font-size: $text-base;
+    }
+  }
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
