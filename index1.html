@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="Sunny Reddy — President of VoIP Office, Governor of Wayne State University, Co-Chair & Treasurer of the Michigan Republican Party. Cloud communications leadership, academic excellence, and organizational integrity."
+    />
+    <!-- SEO: Sunny Reddy, VoIP Office President, Cloud Communications Leadership, Business Communications Executive, VoIP Office Troy Michigan, Sunny Reddy Wayne State, Wayne State Governor, WSU Board of Governors, University Leadership, Sunny Reddy Michigan, Michigan Republican Party Treasurer, Michigan GOP Leadership, Political Leadership Michigan -->
+    <title>Sunny Reddy — President, Governor & Party Leader</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Alegreya+SC:wght@400;500;700;900&family=Alegreya:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+
+    <style>
+        /* ── Page-specific layout helpers ── */
+        .two-col-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .two-col-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        /* Role badges in hero */
+        .role-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .role-badge {
+            display: inline-block;
+            background-color: rgba(245, 158, 11, 0.12);
+            border: 1px solid #f59e0b;
+            color: #f59e0b;
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Alegreya SC', serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section background variants */
+        .section--alt  { background-color: rgba(42, 31, 26, 0.5); }
+        .section--dark { background-color: #1a0f0a; }
+
+        /* Small overline label above section titles */
+        .overline {
+            display: inline-block;
+            font-family: 'Alegreya SC', serif;
+            font-size: 0.8rem;
+            color: rgba(245, 158, 11, 0.75);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Sub-section heading */
+        .sub-title {
+            font-family: 'Alegreya SC', serif;
+            font-size: 1.2rem;
+            color: #f59e0b;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Gold bullet list */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .bullet-list li {
+            color: #d1d5db;
+            font-size: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        .bullet-list li::before {
+            content: '•';
+            color: #f59e0b;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        /* Quoted / highlighted strip */
+        .highlight-strip {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.03));
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        /* Role card (top-bordered info block) */
+        .role-card {
+            background-color: rgba(42, 31, 26, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 3px solid #f59e0b;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .role-card__label {
+            font-family: 'Alegreya SC', serif;
+            font-size: 0.8rem;
+            color: #f59e0b;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .role-card__heading {
+            font-family: 'Alegreya SC', serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .role-card__text {
+            color: rgba(255, 255, 255, 0.68);
+            line-height: 1.75;
+            font-size: 1rem;
+        }
+
+        /* Contact info box */
+        .contact-box {
+            background-color: rgba(42, 31, 26, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid #f59e0b;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .contact-label {
+            font-family: 'Alegreya SC', serif;
+            font-size: 0.85rem;
+            color: #f59e0b;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .contact-value {
+            color: #d1d5db;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .contact-value:last-child { margin-bottom: 0; }
+
+        /* Italic tagline pull-quotes */
+        .tagline-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+        .tagline {
+            border-left: 3px solid #f59e0b;
+            padding: 0.75rem 1.25rem;
+            background-color: rgba(245, 158, 11, 0.05);
+            border-radius: 0 8px 8px 0;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1.05rem;
+            font-style: italic;
+            font-family: 'Alegreya', serif;
+        }
+
+        /* Products grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .product-item {
+            background-color: rgba(42, 31, 26, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 0.875rem 1rem;
+            color: #d1d5db;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: border-color 250ms ease, background-color 250ms ease;
+        }
+        .product-item:hover {
+            border-color: #f59e0b;
+            background-color: rgba(245, 158, 11, 0.08);
+        }
+        .product-item::before {
+            content: '→';
+            color: #f59e0b;
+            flex-shrink: 0;
+        }
+
+        /* Industries pill grid */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .industry-tag {
+            background-color: rgba(245, 158, 11, 0.09);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.875rem;
+            text-align: center;
+            font-family: 'Alegreya SC', serif;
+        }
+
+        /* Jump links in hero */
+        .hero-jump-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Centred CTA block */
+        .cta-center {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        .cta-center h3 {
+            font-family: 'Alegreya SC', serif;
+            color: #f59e0b;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .cta-center p {
+            color: rgba(255, 255, 255, 0.68);
+            max-width: 520px;
+            margin: 0 auto 2rem;
+            line-height: 1.75;
+        }
+
+        /* Body copy helper */
+        .body-text {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+        .body-text:last-child { margin-bottom: 0; }
+
+        /* Spacers */
+        .mb-md  { margin-bottom: 1.5rem; }
+        .mb-lg  { margin-bottom: 2rem; }
+        .mb-xl  { margin-bottom: 3rem; }
+        .mb-2xl { margin-bottom: 4rem; }
+        .mt-xl  { margin-top: 3rem; }
+        .mt-2xl { margin-top: 4rem; }
+    </style>
+</head>
+
+<body>
+    <!-- ── Header ── -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <div class="logo__icon">SR</div>
+            </a>
+
+            <!-- Desktop nav -->
+            <nav class="nav">
+                <a href="#voip"         class="nav__link">VoIP Office</a>
+                <a href="#wayne-state"  class="nav__link">Wayne State</a>
+                <a href="#michigan-gop" class="nav__link">Michigan GOP</a>
+                <a href="#speak"        class="btn btn--primary">Speak with Sunny</a>
+            </nav>
+
+            <!-- Mobile toggle -->
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile nav -->
+        <nav class="mobile-nav">
+            <a href="#voip"         class="mobile-nav__link">VoIP Office</a>
+            <a href="#wayne-state"  class="mobile-nav__link">Wayne State</a>
+            <a href="#michigan-gop" class="mobile-nav__link">Michigan GOP</a>
+            <a href="#speak"        class="mobile-nav__link">Speak with Sunny</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ══════════════════════════════ -->
+        <!--  HERO                          -->
+        <!-- ══════════════════════════════ -->
+        <section class="hero">
+            <div class="container hero__container">
+
+                <!-- Left: copy -->
+                <div class="hero__content">
+                    <span class="overline">Executive · Governor · Leader</span>
+                    <h1 class="hero__title">
+                        <span class="text-underline-accent">Sunny Reddy</span>
+                    </h1>
+
+                    <div class="role-badges">
+                        <span class="role-badge">President, VoIP Office</span>
+                        <span class="role-badge">Governor, Wayne State University</span>
+                        <span class="role-badge">Co-Chair &amp; Treasurer, Michigan GOP</span>
+                    </div>
+
+                    <p class="hero__description">
+                        A business leader, elected university governor, and party officer whose work
+                        spans cloud communications technology, higher education, and organizational
+                        leadership — united by a commitment to innovation, excellence, and long-term
+                        impact.
+                    </p>
+
+                    <div class="hero-jump-links">
+                        <a href="#voip"         class="btn btn--primary">VoIP Office</a>
+                        <a href="#wayne-state"  class="btn btn--outline">Wayne State</a>
+                        <a href="#michigan-gop" class="btn btn--ghost">Michigan GOP</a>
+                    </div>
+                </div>
+
+                <!-- Right: image -->
+                <div class="hero__image">
+                    <img src="./src/assets/images/hero-image.jpg" alt="Sunny Reddy — President, Governor, Leader">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════ -->
+        <!--  ROLE OVERVIEW CARDS           -->
+        <!-- ══════════════════════════════ -->
+        <section class="section section--alt">
+            <div class="container">
+                <h2 class="section-title">Leadership Across Three Domains</h2>
+                <div class="three-col-grid">
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">President, VoIP Office</h3>
+                        <p class="info-card__text">
+                            Providing executive leadership focused on innovation, growth, and customer
+                            success in cloud-based business communications. Driving technology
+                            advancements and operational excellence across international markets.
+                        </p>
+                        <a href="#voip" class="btn btn--primary btn--sm">Learn More</a>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">Governor, Wayne State University</h3>
+                        <p class="info-card__text">
+                            An elected alumnus serving on the Board of Governors, committed to
+                            academic excellence, student success, and strengthening higher education
+                            opportunity for future generations.
+                        </p>
+                        <a href="#wayne-state" class="btn btn--primary btn--sm">Learn More</a>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">Co-Chair &amp; Treasurer, Michigan GOP</h3>
+                        <p class="info-card__text">
+                            Serving in dual leadership roles with a focus on financial accountability,
+                            organizational integrity, and long-term stability for the Michigan
+                            Republican Party.
+                        </p>
+                        <a href="#michigan-gop" class="btn btn--primary btn--sm">Learn More</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════ -->
+        <!--  PAGE 1 · VOIP OFFICE                  -->
+        <!-- ══════════════════════════════════════ -->
+        <section id="voip" class="section section--dark">
+            <div class="container">
+
+                <span class="overline">Executive Leadership</span>
+                <h2 class="section-title">President, VoIP Office</h2>
+
+                <!-- About + image -->
+                <div class="two-col-grid mb-2xl" style="align-items: center;">
+                    <div>
+                        <p class="body-text">
+                            Sunny Reddy is a business leader serving as President of VoIP Office,
+                            where he provides executive leadership focused on innovation, growth, and
+                            customer success. His leadership supports the development and expansion of
+                            advanced cloud communications solutions that help organizations operate
+                            more efficiently and effectively.
+                        </p>
+                        <p class="body-text">
+                            With a focus on operational excellence and long-term growth, Sunny plays
+                            an important role in advancing the company's mission of delivering
+                            reliable, scalable, and modern communications technology for businesses
+                            of all sizes.
+                        </p>
+                    </div>
+                    <div class="hero__image">
+                        <img src="./src/assets/images/hero-image.jpg" alt="Sunny Reddy, President of VoIP Office">
+                    </div>
+                </div>
+
+                <!-- Leadership role + Mission -->
+                <div class="two-col-grid mb-xl">
+
+                    <div class="role-card">
+                        <p class="role-card__label">Leadership Role</p>
+                        <h3 class="role-card__heading">President, VoIP Office</h3>
+                        <p class="role-card__text">
+                            As President, Sunny Reddy leads strategic initiatives that strengthen
+                            customer experience, expand service capabilities, and support continued
+                            business growth. His leadership helps drive technology advancements,
+                            operational improvements, and expansion into new markets.
+                        </p>
+                        <br>
+                        <p class="role-card__text">
+                            He is actively involved in guiding product development, strengthening
+                            customer support, and ensuring that organizations using VoIP Office
+                            solutions can communicate with confidence and efficiency.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="sub-title">Mission &amp; Vision</div>
+                        <p class="body-text">
+                            Sunny's leadership is centered on empowering businesses through modern
+                            communications technology. His vision focuses on:
+                        </p>
+                        <ul class="bullet-list mb-lg">
+                            <li>Delivering reliable and scalable communication solutions</li>
+                            <li>Supporting business productivity and efficiency</li>
+                            <li>Driving innovation in cloud communications</li>
+                            <li>Strengthening customer experience and service quality</li>
+                        </ul>
+                        <div class="tagline-block">
+                            <div class="tagline">Leadership Driving Innovation</div>
+                            <div class="tagline">Communication Powered by Excellence</div>
+                            <div class="tagline">Building the Future of Business Communications</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Business highlights -->
+                <div class="highlight-strip">
+                    <div class="sub-title">Business Leadership Highlights</div>
+                    <p class="body-text">Under Sunny's leadership, VoIP Office has:</p>
+                    <ul class="bullet-list">
+                        <li>Expanded operations to support international growth</li>
+                        <li>Enhanced business communication platforms</li>
+                        <li>Introduced system upgrades designed to improve efficiency and customer performance</li>
+                        <li>Strengthened infrastructure to support long-term scalability</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VoIP: About company + Products -->
+        <section class="section section--alt">
+            <div class="container">
+
+                <!-- About VoIP + Contact -->
+                <div class="two-col-grid mb-xl">
+
+                    <div>
+                        <div class="sub-title">About VoIP Office</div>
+                        <p class="body-text">
+                            VoIP Office is a cloud-based communications provider delivering business
+                            phone systems and unified communications solutions. The company supports
+                            organizations across a wide range of industries:
+                        </p>
+                        <div class="industries-grid">
+                            <div class="industry-tag">Healthcare</div>
+                            <div class="industry-tag">Financial Services</div>
+                            <div class="industry-tag">Technology</div>
+                            <div class="industry-tag">Government</div>
+                            <div class="industry-tag">Education</div>
+                            <div class="industry-tag">Travel</div>
+                            <div class="industry-tag">Hospitality</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="sub-title">Contact Information</div>
+                        <div class="contact-box">
+                            <span class="contact-label">Organization</span>
+                            <p class="contact-value">VoIP Office</p>
+
+                            <span class="contact-label">Address</span>
+                            <p class="contact-value">525 E Big Beaver Rd<br>Troy, MI 48083</p>
+
+                            <span class="contact-label">Phone</span>
+                            <p class="contact-value">
+                                +1 (248) 436-3600<br>
+                                +1 (248) 786-6783
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Products -->
+                <div class="sub-title">Products &amp; Capabilities</div>
+                <p class="body-text">
+                    VoIP Office solutions help organizations improve communication, productivity,
+                    and operational efficiency:
+                </p>
+                <div class="products-grid">
+                    <div class="product-item">Business phone systems</div>
+                    <div class="product-item">Cloud communications</div>
+                    <div class="product-item">Auto attendant &amp; call routing</div>
+                    <div class="product-item">Conference calling</div>
+                    <div class="product-item">Call recording</div>
+                    <div class="product-item">Mobile &amp; desktop apps</div>
+                    <div class="product-item">CRM integration</div>
+                    <div class="product-item">Toll-free services</div>
+                    <div class="product-item">Contact center solutions</div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════ -->
+        <!--  PAGE 2 · WAYNE STATE UNIVERSITY       -->
+        <!-- ══════════════════════════════════════ -->
+        <section id="wayne-state" class="section section--dark">
+            <div class="container">
+
+                <span class="overline">Higher Education Leadership</span>
+                <h2 class="section-title">Governor, Wayne State University</h2>
+
+                <!-- About + image -->
+                <div class="two-col-grid mb-2xl" style="align-items: center;">
+                    <div class="hero__image">
+                        <img src="./src/assets/images/sunny-profile.jpg" alt="Sunny Reddy, Wayne State University Governor">
+                    </div>
+                    <div>
+                        <p class="body-text">
+                            Sunny Reddy is an elected Governor of Wayne State University and a proud
+                            alumnus. He earned his Master's Degree in Chemical Engineering from Wayne
+                            State University in 1994.
+                        </p>
+                        <p class="body-text">
+                            His leadership reflects a strong commitment to academic excellence,
+                            student success, and maintaining the integrity and strength of higher
+                            education.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leadership + Mission -->
+                <div class="two-col-grid mb-xl">
+
+                    <div class="role-card">
+                        <p class="role-card__label">Leadership Role</p>
+                        <h3 class="role-card__heading">Governor, Wayne State University</h3>
+                        <p class="role-card__text">
+                            As a Governor, Sunny helps provide leadership and oversight to support
+                            the university's continued growth and academic mission. His focus includes
+                            strengthening educational excellence, supporting students, and helping
+                            prepare graduates for future career success.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="sub-title">Mission &amp; Vision</div>
+                        <p class="body-text">
+                            Sunny's vision for Wayne State University focuses on:
+                        </p>
+                        <ul class="bullet-list mb-lg">
+                            <li>Supporting academic excellence</li>
+                            <li>Advancing STEM education</li>
+                            <li>Promoting student success</li>
+                            <li>Supporting educational opportunity</li>
+                        </ul>
+                        <p style="color: rgba(255,255,255,0.55); font-style: italic; line-height: 1.75; font-family: 'Alegreya', serif; font-size: 1rem;">
+                            His leadership reflects a commitment to helping students succeed and
+                            ensuring the university continues to serve future generations.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Initiatives + Core Values -->
+                <div class="two-col-grid mb-xl">
+
+                    <div>
+                        <div class="sub-title">University Initiatives</div>
+                        <p class="body-text">Sunny supports initiatives that strengthen:</p>
+                        <ul class="bullet-list mb-lg">
+                            <li>Academic excellence</li>
+                            <li>Student opportunity</li>
+                            <li>Campus leadership</li>
+                            <li>Educational advancement</li>
+                        </ul>
+                        <p class="body-text">
+                            He is committed to supporting programs that help students succeed
+                            academically and professionally.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="sub-title">Core Values</div>
+                        <p class="body-text">Sunny's leadership is guided by:</p>
+                        <ul class="bullet-list">
+                            <li>Academic excellence</li>
+                            <li>Merit and opportunity</li>
+                            <li>Student success</li>
+                            <li>Educational integrity</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Community + Contact -->
+                <div class="two-col-grid">
+
+                    <div class="highlight-strip">
+                        <div class="sub-title">Community &amp; Philanthropy</div>
+                        <p class="body-text">
+                            Sunny has supported community and charitable efforts, including:
+                        </p>
+                        <ul class="bullet-list mb-lg">
+                            <li>COVID-19 relief support</li>
+                            <li>Disaster relief assistance</li>
+                            <li>Community fundraising initiatives</li>
+                        </ul>
+                        <p style="color: rgba(255,255,255,0.55); font-style: italic; font-family: 'Alegreya', serif; line-height: 1.75; font-size: 1rem;">
+                            His work reflects a commitment to helping communities during times of need.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="sub-title">Contact Information</div>
+                        <div class="contact-box mb-lg">
+                            <span class="contact-label">Phone</span>
+                            <p class="contact-value">+1 248-744-6900</p>
+                        </div>
+                        <div class="tagline-block">
+                            <div class="tagline">Leadership Supporting Education</div>
+                            <div class="tagline">Committed to Academic Excellence</div>
+                            <div class="tagline">Advancing Student Success</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════ -->
+        <!--  PAGE 3 · MICHIGAN REPUBLICAN PARTY    -->
+        <!-- ══════════════════════════════════════ -->
+        <section id="michigan-gop" class="section section--alt">
+            <div class="container">
+
+                <span class="overline">Party Leadership</span>
+                <h2 class="section-title">Co-Chair &amp; Treasurer, Michigan Republican Party</h2>
+
+                <!-- About + image -->
+                <div class="two-col-grid mb-2xl" style="align-items: center;">
+                    <div>
+                        <p class="body-text">
+                            Sunny Reddy serves as Co-Chair and Treasurer of the Michigan Republican
+                            Party. His leadership focuses on strengthening organizational integrity,
+                            financial accountability, and long-term success.
+                        </p>
+                        <p class="body-text">
+                            He brings executive leadership experience and a commitment to responsible
+                            management.
+                        </p>
+                    </div>
+                    <div class="hero__image">
+                        <img src="./src/assets/images/hero-image.jpg" alt="Sunny Reddy, Michigan Republican Party">
+                    </div>
+                </div>
+
+                <!-- Two role cards -->
+                <div class="two-col-grid mb-xl">
+
+                    <div class="role-card">
+                        <p class="role-card__label">Leadership Role</p>
+                        <h3 class="role-card__heading">Co-Chair, Michigan Republican Party</h3>
+                        <p class="role-card__text">
+                            Sunny provides leadership that supports organizational growth and unity,
+                            working to strengthen the party's presence and effectiveness across
+                            Michigan through principled, forward-looking leadership.
+                        </p>
+                    </div>
+
+                    <div class="role-card">
+                        <p class="role-card__label">Leadership Role</p>
+                        <h3 class="role-card__heading">Treasurer, Michigan Republican Party</h3>
+                        <p class="role-card__text">
+                            As Treasurer, Sunny focuses on financial accountability and responsible
+                            management. His leadership reflects a commitment to transparency and
+                            organizational integrity at every level of party operations.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Mission + Core Values -->
+                <div class="two-col-grid mb-xl">
+
+                    <div>
+                        <div class="sub-title">Mission &amp; Vision</div>
+                        <p class="body-text">Sunny's leadership focuses on:</p>
+                        <ul class="bullet-list">
+                            <li>Financial discipline</li>
+                            <li>Organizational strength</li>
+                            <li>Responsible leadership</li>
+                            <li>Long-term stability</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="sub-title">Core Values</div>
+                        <p class="body-text">His leadership is guided by:</p>
+                        <ul class="bullet-list">
+                            <li>Integrity</li>
+                            <li>Accountability</li>
+                            <li>Discipline</li>
+                            <li>Leadership</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Policy Focus + Contact -->
+                <div class="two-col-grid">
+
+                    <div>
+                        <div class="sub-title">Policy Focus Areas</div>
+                        <p class="body-text">Sunny supports priorities including:</p>
+                        <ul class="bullet-list mb-lg">
+                            <li>Economic growth</li>
+                            <li>Education</li>
+                            <li>Organizational leadership</li>
+                            <li>Community engagement</li>
+                        </ul>
+                        <p class="body-text">
+                            Sunny participates in leadership events and initiatives focused on
+                            strengthening organizational success and community engagement.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="sub-title">Contact Information</div>
+                        <div class="contact-box mb-lg">
+                            <span class="contact-label">Email</span>
+                            <p class="contact-value">sunny@mi.gop</p>
+
+                            <span class="contact-label">Phone</span>
+                            <p class="contact-value">+1 248-744-6900</p>
+                        </div>
+                        <div class="tagline-block">
+                            <div class="tagline">Leadership With Integrity</div>
+                            <div class="tagline">Committed to Accountability</div>
+                            <div class="tagline">Strength Through Leadership</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ══════════════════════════════════════ -->
+        <!--  KEY HIGHLIGHTS + BIOS + CTA           -->
+        <!-- ══════════════════════════════════════ -->
+        <section id="speak" class="section section--dark">
+            <div class="container">
+
+                <h2 class="section-title">Key Highlights</h2>
+
+                <div class="three-col-grid mb-2xl">
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">VoIP Office</h3>
+                        <ul class="bullet-list">
+                            <li>President of VoIP Office</li>
+                            <li>Executive leadership in cloud communications</li>
+                            <li>Focus on innovation and business growth</li>
+                            <li>Supports expansion and technology advancement</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">Wayne State University</h3>
+                        <ul class="bullet-list">
+                            <li>Elected Governor of Wayne State University</li>
+                            <li>Alumnus — M.S. Chemical Engineering, 1994</li>
+                            <li>Supports academic excellence</li>
+                            <li>Focused on student success</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">Michigan Republican Party</h3>
+                        <ul class="bullet-list">
+                            <li>Co-Chair, Michigan Republican Party</li>
+                            <li>Treasurer, Michigan Republican Party</li>
+                            <li>Focus on financial accountability</li>
+                            <li>Experienced executive leader</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Short + Long Bio -->
+                <div class="two-col-grid mb-2xl">
+
+                    <div class="highlight-strip">
+                        <div class="sub-title">Short Bio</div>
+                        <p class="body-text">
+                            Sunny Reddy is President of VoIP Office, an elected Governor of Wayne
+                            State University, and Co-Chair &amp; Treasurer of the Michigan Republican
+                            Party — providing executive leadership focused on business growth,
+                            academic excellence, and organizational integrity.
+                        </p>
+                    </div>
+
+                    <div class="highlight-strip">
+                        <div class="sub-title">Long Bio</div>
+                        <p class="body-text">
+                            Sunny Reddy serves as President of VoIP Office, where he leads strategic
+                            initiatives that support innovation, operational excellence, and customer
+                            success. A Wayne State alumnus, he was elected to the university's Board
+                            of Governors, championing academic excellence and student opportunity.
+                            As Co-Chair and Treasurer of the Michigan Republican Party, his leadership
+                            focuses on financial accountability, organizational strength, and long-term
+                            stability — all guided by a commitment to integrity and principled service.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-center">
+                    <h3>Speak with Sunny</h3>
+                    <p>
+                        Have questions about leadership, cloud communications, education, or
+                        community engagement? Start a conversation with Sunny's AI counterpart.
+                    </p>
+                    <a href="#" class="btn btn--primary">Access SunnyAI</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-widget__trigger" aria-label="Open chat">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </button>
+        <div class="chat-widget__window">
+            <!-- Chat interface will be built here -->
+        </div>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/accordion.js"></script>
+</body>
+</html>
