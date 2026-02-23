@@ -1,0 +1,275 @@
+@use 'variables' as *;
+
+// ── Section background variants ─────────────────────────────────
+.section--alt  { background-color: rgba(42, 31, 26, 0.5); }
+.section--dark { background-color: $color-bg-primary; }
+
+// ── Two-column responsive grid ──────────────────────────────────
+.two-col-grid {
+  display: grid;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+  }
+
+  &--align-center { align-items: center; }
+}
+
+// ── Overline label (above section headings) ─────────────────────
+.overline {
+  display: inline-block;
+  font-family: $font-heading;
+  font-size: $text-xs;
+  color: rgba(245, 158, 11, 0.75);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: $spacing-xs;
+}
+
+// ── Gold sub-section title ──────────────────────────────────────
+.sub-title {
+  font-family: $font-heading;
+  font-size: $text-xl;
+  color: $color-accent-primary;
+  font-weight: $weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+// ── Muted body copy ─────────────────────────────────────────────
+.body-text {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: $text-lg;
+  line-height: 1.8;
+  margin-bottom: $spacing-md;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+// ── Gold bullet list ────────────────────────────────────────────
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  li {
+    color: $color-text-secondary;
+    font-size: $text-base;
+    padding-left: $spacing-md;
+    position: relative;
+    line-height: 1.6;
+
+    &::before {
+      content: '•';
+      color: $color-accent-primary;
+      position: absolute;
+      left: 0;
+      font-weight: $weight-bold;
+    }
+  }
+}
+
+// ── Hero role badges ────────────────────────────────────────────
+.role-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-lg;
+}
+
+.role-badge {
+  display: inline-block;
+  background-color: rgba(245, 158, 11, 0.12);
+  border: 1px solid $border-accent;
+  color: $color-accent-primary;
+  padding: 0.4rem 1rem;
+  border-radius: $radius-full;
+  font-size: $text-xs;
+  font-weight: $weight-semibold;
+  font-family: $font-heading;
+  letter-spacing: 0.5px;
+}
+
+// ── Hero jump-to-section links ──────────────────────────────────
+.hero-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+// ── Role card (top-accented info block) ─────────────────────────
+.role-card {
+  background-color: $color-bg-secondary;
+  border: 1px solid $border-soft;
+  border-top: 3px solid $color-accent-primary;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+
+  &__label {
+    font-family: $font-heading;
+    font-size: $text-xs;
+    color: $color-accent-primary;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: $text-2xl;
+    color: $color-text-primary;
+    margin-bottom: $spacing-sm;
+    font-weight: $weight-bold;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    line-height: 1.75;
+    font-size: $text-base;
+  }
+}
+
+// ── Highlight strip (subtle gold-tinted block) ──────────────────
+.highlight-strip {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.03));
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+}
+
+// ── Contact info box (left-gold-border block) ───────────────────
+.contact-info-box {
+  background-color: $color-bg-secondary;
+  border: 1px solid $border-soft;
+  border-left: 3px solid $color-accent-primary;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+
+  &__label {
+    display: block;
+    font-family: $font-heading;
+    font-size: $text-xs;
+    color: $color-accent-primary;
+    font-weight: $weight-bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  &__value {
+    color: $color-text-secondary;
+    font-size: $text-base;
+    margin-bottom: $spacing-sm;
+    line-height: 1.5;
+
+    &:last-child { margin-bottom: 0; }
+  }
+}
+
+// ── Italic tagline pull-quotes ──────────────────────────────────
+.tagline-block {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  margin-top: $spacing-lg;
+}
+
+.tagline {
+  border-left: 3px solid $color-accent-primary;
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(245, 158, 11, 0.05);
+  border-radius: 0 $radius-md $radius-md 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: $text-lg;
+  font-style: italic;
+  font-family: $font-primary;
+}
+
+// ── Products grid ───────────────────────────────────────────────
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.75rem;
+  margin-top: $spacing-md;
+}
+
+.product-item {
+  background-color: $color-bg-secondary;
+  border: 1px solid $border-soft;
+  border-radius: $radius-md;
+  padding: 0.875rem 1rem;
+  color: $color-text-secondary;
+  font-size: $text-sm;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: border-color $transition-base, background-color $transition-base;
+
+  &:hover {
+    border-color: $color-accent-primary;
+    background-color: rgba(245, 158, 11, 0.08);
+  }
+
+  &::before {
+    content: '→';
+    color: $color-accent-primary;
+    flex-shrink: 0;
+  }
+}
+
+// ── Industries pill grid ────────────────────────────────────────
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.5rem;
+  margin-top: $spacing-sm;
+}
+
+.industry-tag {
+  background-color: rgba(245, 158, 11, 0.09);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  border-radius: $radius-sm;
+  padding: 0.5rem 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: $text-sm;
+  text-align: center;
+  font-family: $font-heading;
+}
+
+// ── Centred CTA block ───────────────────────────────────────────
+.cta-center {
+  text-align: center;
+  margin-top: $spacing-2xl;
+
+  &__heading {
+    font-family: $font-heading;
+    color: $color-accent-primary;
+    font-size: $text-2xl;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    max-width: 520px;
+    margin: 0 auto $spacing-lg;
+    line-height: 1.75;
+  }
+}
+
+// ── Spacing utilities ───────────────────────────────────────────
+.mt-sm  { margin-top: $spacing-sm; }
+.mt-md  { margin-top: $spacing-md; }
+.mt-lg  { margin-top: $spacing-lg; }
+.mt-xl  { margin-top: $spacing-xl; }
+.mt-2xl { margin-top: $spacing-2xl; }
+
+.mb-sm  { margin-bottom: $spacing-sm; }
+.mb-md  { margin-bottom: $spacing-md; }
+.mb-lg  { margin-bottom: $spacing-lg; }
+.mb-xl  { margin-bottom: $spacing-xl; }
+.mb-2xl { margin-bottom: $spacing-2xl; }
