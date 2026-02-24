@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="Send a message to Sunny Reddy — reach out with questions or to start a conversation with Sunny or his team."
+    />
+    <title>Contact Sunny Reddy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Alegreya+SC:wght@400;500;700;900&family=Alegreya:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index2.html" class="logo">
+                <div class="logo__icon">SR</div>
+            </a>
+
+            <nav class="nav">
+                <a href="voip-office.html"  class="nav__link">VoIP Office</a>
+                <a href="wayne-state.html"  class="nav__link">Wayne State</a>
+                <a href="michigan-gop.html" class="nav__link">Michigan GOP</a>
+                <a href="contact2.html"     class="nav__link nav__link--active">Contact</a>
+                <a href="#speak"            class="btn btn--primary">Speak with Sunny</a>
+            </nav>
+
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-nav">
+            <a href="voip-office.html"  class="mobile-nav__link">VoIP Office</a>
+            <a href="wayne-state.html"  class="mobile-nav__link">Wayne State</a>
+            <a href="michigan-gop.html" class="mobile-nav__link">Michigan GOP</a>
+            <a href="contact2.html"     class="mobile-nav__link">Contact</a>
+            <a href="#speak"            class="mobile-nav__link">Speak with Sunny</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="container contact-section__container">
+
+                <!-- Left Column -->
+                <div class="contact-section__left">
+                    <h1 class="contact-section__title">
+                        Send a message to <span class="text-accent">Sunny</span>
+                    </h1>
+
+                    <p class="contact-section__description">
+                        Have a question you'd like to ask or want to
+                        initiate a conversation with Sunny or his team?
+                    </p>
+
+                    <p class="contact-section__subtext">
+                        Insert other text
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="contact-social">
+                        <a href="#" class="contact-social__link contact-social__link--facebook" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="contact-social__link contact-social__link--instagram" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="contact-social__link contact-social__link--x" aria-label="X (Twitter)">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="contact-social__link contact-social__link--linkedin" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="contact-section__right">
+
+                    <!-- Success Message -->
+                    <div class="contact-form__success" id="form-success" aria-live="polite" hidden>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p>Your message was sent! Sunny's team will be in touch soon.</p>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div class="contact-form__error" id="form-error" aria-live="polite" hidden>
+                        <p>Something went wrong. Please try again or email directly.</p>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" novalidate>
+
+                        <!-- Name -->
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">
+                                Name <span class="contact-form__required">(required)</span>
+                            </label>
+                            <div class="contact-form__name-row">
+                                <div class="contact-form__field">
+                                    <label class="contact-form__sublabel" for="first-name">First Name</label>
+                                    <input
+                                        type="text"
+                                        id="first-name"
+                                        name="first_name"
+                                        class="contact-form__input"
+                                        required
+                                        autocomplete="given-name"
+                                    />
+                                </div>
+                                <div class="contact-form__field">
+                                    <label class="contact-form__sublabel" for="last-name">Last Name</label>
+                                    <input
+                                        type="text"
+                                        id="last-name"
+                                        name="last_name"
+                                        class="contact-form__input"
+                                        required
+                                        autocomplete="family-name"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="contact-form__group">
+                            <label class="contact-form__label" for="email">
+                                Email <span class="contact-form__required">(required)</span>
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="contact-form__input contact-form__input--full"
+                                required
+                                autocomplete="email"
+                            />
+                        </div>
+
+                        <!-- Message -->
+                        <div class="contact-form__group">
+                            <label class="contact-form__label" for="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="contact-form__textarea"
+                                rows="6"
+                            ></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn btn--primary contact-form__submit" id="submit-btn">
+                            <span class="contact-form__btn-text">Send Message</span>
+                            <span class="contact-form__btn-spinner" aria-hidden="true"></span>
+                        </button>
+
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-widget__trigger" aria-label="Open chat">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </button>
+        <div class="chat-widget__window"></div>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/contact.js"></script>
+</body>
+</html>
