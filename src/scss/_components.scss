@@ -1,6 +1,8 @@
 @use 'variables' as *;
 
+// ─────────────────────────────────────────────────────────────
 // Buttons
+// ─────────────────────────────────────────────────────────────
 .btn {
   display: inline-flex;
   align-items: center;
@@ -14,63 +16,65 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border: 2px solid transparent;
-  
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
-  
+
   &--primary {
     background-color: $color-accent-primary;
     color: $color-bg-primary;
-    
+
     &:hover:not(:disabled) {
       background-color: $color-accent-secondary;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+      box-shadow: 0 8px 20px $color-accent-shadow-md;
     }
   }
-  
+
   &--outline {
     background-color: transparent;
     border-color: $color-accent-primary;
     color: $color-accent-primary;
-    
+
     &:hover:not(:disabled) {
       background-color: $color-accent-primary;
       color: $color-bg-primary;
     }
   }
-  
+
   &--ghost {
     background-color: transparent;
     color: $color-text-primary;
-    
+
     &:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: $color-white-soft;
     }
   }
-  
+
   &--sm {
     padding: 0.625rem 1.5rem;
     font-size: $text-sm;
   }
 }
 
+// ─────────────────────────────────────────────────────────────
 // Accordion
+// ─────────────────────────────────────────────────────────────
 .accordion {
   display: flex;
   flex-direction: column;
   gap: $spacing-sm;
   max-width: 800px;
-  
+
   &__item {
     background-color: $color-bg-secondary;
     border: 1px solid $border-soft;
     border-radius: $radius-md;
     overflow: hidden;
   }
-  
+
   &__header {
     width: 100%;
     padding: $spacing-lg;
@@ -85,31 +89,31 @@
     cursor: pointer;
     transition: background-color $transition-base;
     text-align: left;
-    
+
     &:hover {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: $color-white-faint;
     }
   }
-  
+
   &__icon {
     font-size: $text-2xl;
     color: $color-accent-primary;
     transition: transform $transition-base;
-    
+
     .is-open & {
       transform: rotate(45deg);
     }
   }
-  
+
   &__content {
     max-height: 0;
     overflow: hidden;
     transition: max-height $transition-slow;
-    
+
     &.is-open {
       max-height: 500px;
     }
-    
+
     p {
       padding: 0 $spacing-lg $spacing-lg;
       color: $color-text-muted;
@@ -118,13 +122,15 @@
   }
 }
 
-// Chat Widget (bottom right)
+// ─────────────────────────────────────────────────────────────
+// Chat Widget
+// ─────────────────────────────────────────────────────────────
 .chat-widget {
   position: fixed;
   bottom: $spacing-lg;
   right: $spacing-lg;
   z-index: $z-chat-widget;
-  
+
   &__trigger {
     width: 60px;
     height: 60px;
@@ -135,21 +141,21 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+    box-shadow: 0 8px 24px $color-accent-shadow-lg;
     transition: all $transition-base;
     border: 3px solid $color-bg-primary;
-    
+
     &:hover {
       transform: scale(1.1);
-      box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5);
+      box-shadow: 0 12px 32px $color-accent-shadow-xl;
     }
-    
+
     svg {
       width: 28px;
       height: 28px;
     }
   }
-  
+
   &__window {
     position: absolute;
     bottom: 80px;
@@ -158,16 +164,16 @@
     height: 500px;
     background-color: $color-bg-secondary;
     border-radius: $radius-lg;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 60px $color-black-shadow-xl;
     border: 1px solid $border-soft;
     display: none;
     flex-direction: column;
     overflow: hidden;
-    
+
     &.is-open {
       display: flex;
     }
-    
+
     @media (max-width: $breakpoint-sm) {
       width: calc(100vw - 2rem);
       height: 80vh;
@@ -175,36 +181,40 @@
   }
 }
 
+// ─────────────────────────────────────────────────────────────
 // Card
+// ─────────────────────────────────────────────────────────────
 .card {
   background-color: $color-bg-secondary;
   border: 1px solid $border-soft;
   border-radius: $radius-lg;
   padding: $spacing-lg;
-  
+
   &--hover {
     transition: all $transition-base;
-    
+
     &:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 12px 32px $color-black-shadow-md;
       border-color: $color-accent-primary;
     }
   }
 }
 
+// ─────────────────────────────────────────────────────────────
 // Mobile Menu Toggle
+// ─────────────────────────────────────────────────────────────
 .menu-toggle {
   display: flex;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
   padding: 8px;
-  
+
   @media (min-width: $breakpoint-md) {
     display: none;
   }
-  
+
   span {
     width: 25px;
     height: 3px;
@@ -212,60 +222,56 @@
     border-radius: 2px;
     transition: all $transition-base;
   }
-  
+
   &.is-active {
-    span:nth-child(1) {
-      transform: rotate(45deg) translate(7px, 7px);
-    }
-    
-    span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
+    span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
   }
 }
 
+// ─────────────────────────────────────────────────────────────
 // Mobile Navigation
+// ─────────────────────────────────────────────────────────────
 .mobile-nav {
   display: none;
   position: fixed;
-  top: 80px;
+  top: $header-height;
   left: 0;
   right: 0;
-  background-color: rgba(26, 15, 10, 0.98);
+  background-color: $color-header-bg-scrolled;
   backdrop-filter: blur(10px);
   padding: $spacing-lg;
   border-bottom: 1px solid $border-soft;
-  
+
   &.is-open {
     display: block;
   }
-  
+
   @media (min-width: $breakpoint-md) {
     display: none !important;
   }
-  
+
   &__link {
     display: block;
     padding: $spacing-sm 0;
     color: $color-text-primary;
     font-size: $text-lg;
     border-bottom: 1px solid $border-soft;
-    
+
     &:last-child {
       border-bottom: none;
     }
-    
+
     &:hover {
       color: $color-accent-primary;
     }
   }
 }
 
+// ─────────────────────────────────────────────────────────────
 // Contact Form
+// ─────────────────────────────────────────────────────────────
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -310,57 +316,49 @@
     flex-direction: column;
   }
 
-  &__input {
-    background-color: #d1cfc9;
+  // Shared input + textarea base styles
+  %form-field-base {
+    background-color: $color-input-bg;
     border: 2px solid transparent;
     border-radius: $radius-md;
     padding: 0.75rem 1rem;
     font-family: $font-primary;
     font-size: $text-base;
-    color: #1a0f0a;
+    color: $color-input-text;
     width: 100%;
-    transition: border-color $transition-base, background-color $transition-base;
     outline: none;
+    transition: border-color $transition-base, background-color $transition-base;
 
     &::placeholder {
-      color: rgba(26, 15, 10, 0.4);
+      color: $color-input-placeholder;
     }
 
     &:focus {
       border-color: $color-accent-primary;
-      background-color: #e5e2db;
-      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+      background-color: $color-input-bg-focus;
+      box-shadow: 0 0 0 3px $color-accent-shadow-sm;
     }
 
-    &--full {
-      width: 100%;
+    &.has-error {
+      border-color: $color-error;
+      background-color: $color-error-input-bg;
+
+      &:focus {
+        border-color: $color-error;
+        box-shadow: 0 0 0 3px $color-error-shadow;
+      }
     }
   }
 
+  &__input {
+    @extend %form-field-base;
+  }
+
   &__textarea {
-    background-color: #d1cfc9;
-    border: 2px solid transparent;
-    border-radius: $radius-md;
-    padding: 0.75rem 1rem;
-    font-family: $font-primary;
-    font-size: $text-base;
-    color: #1a0f0a;
-    width: 100%;
+    @extend %form-field-base;
     resize: vertical;
     min-height: 160px;
-    transition: border-color $transition-base, background-color $transition-base;
-    outline: none;
     line-height: 1.6;
-
-    &::placeholder {
-      color: rgba(26, 15, 10, 0.4);
-    }
-
-    &:focus {
-      border-color: $color-accent-primary;
-      background-color: #e5e2db;
-      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
-    }
   }
 
   &__submit {
@@ -373,12 +371,11 @@
     }
   }
 
-  // Spinner inside the button
   &__btn-spinner {
     display: none;
     width: 18px;
     height: 18px;
-    border: 2px solid rgba(26, 15, 10, 0.3);
+    border: 2px solid $color-input-spinner-track;
     border-top-color: $color-bg-primary;
     border-radius: $radius-full;
     position: absolute;
@@ -388,31 +385,11 @@
     animation: spin 0.7s linear infinite;
   }
 
-  // Input error state
-  &__input,
-  &__textarea {
-    &.has-error {
-      border-color: #ef4444;
-      background-color: #f9e0e0;
-
-      &:focus {
-        border-color: #ef4444;
-        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
-      }
-    }
-  }
-
-  // Success banner
-  &__success {
-    display: flex;
-    align-items: center;
-    gap: $spacing-sm;
-    background-color: rgba(34, 197, 94, 0.12);
-    border: 1px solid rgba(34, 197, 94, 0.4);
+  // Status banners — shared base
+  %status-banner {
     border-radius: $radius-md;
     padding: $spacing-md;
     margin-bottom: $spacing-lg;
-    color: #86efac;
     opacity: 0;
     transform: translateY(-6px);
     transition: opacity $transition-base, transform $transition-base;
@@ -421,41 +398,35 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    p {
+      margin: 0;
+      font-size: $text-base;
+    }
+  }
+
+  &__success {
+    @extend %status-banner;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    background-color: $color-success-bg;
+    border: 1px solid $color-success-border;
+    color: $color-success-text;
 
     svg {
       width: 24px;
       height: 24px;
       flex-shrink: 0;
-      color: #4ade80;
-    }
-
-    p {
-      margin: 0;
-      font-size: $text-base;
+      color: $color-success-icon;
     }
   }
 
-  // Error banner
   &__error {
-    background-color: rgba(239, 68, 68, 0.12);
-    border: 1px solid rgba(239, 68, 68, 0.4);
-    border-radius: $radius-md;
-    padding: $spacing-md;
-    margin-bottom: $spacing-lg;
-    color: #fca5a5;
-    opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity $transition-base, transform $transition-base;
-
-    &.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    p {
-      margin: 0;
-      font-size: $text-base;
-    }
+    @extend %status-banner;
+    background-color: $color-error-bg;
+    border: 1px solid $color-error-border;
+    color: $color-error-text;
   }
 }
 

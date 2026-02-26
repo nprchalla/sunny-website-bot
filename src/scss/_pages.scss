@@ -1,10 +1,14 @@
 @use 'variables' as *;
 
-// ── Section background variants ─────────────────────────────────
-.section--alt  { background-color: rgba(42, 31, 26, 0.5); }
+// ─────────────────────────────────────────────────────────────
+// Section background variants
+// ─────────────────────────────────────────────────────────────
+.section--alt  { background-color: $color-bg-alt; }
 .section--dark { background-color: $color-bg-primary; }
 
-// ── Two-column responsive grid ──────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Two-column responsive grid
+// ─────────────────────────────────────────────────────────────
 .two-col-grid {
   display: grid;
   gap: $spacing-lg;
@@ -17,18 +21,22 @@
   &--align-center { align-items: center; }
 }
 
-// ── Overline label (above section headings) ─────────────────────
+// ─────────────────────────────────────────────────────────────
+// Overline label (above section headings)
+// ─────────────────────────────────────────────────────────────
 .overline {
   display: inline-block;
   font-family: $font-heading;
   font-size: $text-xs;
-  color: rgba(245, 158, 11, 0.75);
+  color: $color-accent-overline;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: $spacing-xs;
 }
 
-// ── Gold sub-section title ──────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Gold sub-section title
+// ─────────────────────────────────────────────────────────────
 .sub-title {
   font-family: $font-heading;
   font-size: $text-xl;
@@ -37,9 +45,11 @@
   margin-bottom: $spacing-sm;
 }
 
-// ── Muted body copy ─────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Muted body copy
+// ─────────────────────────────────────────────────────────────
 .body-text {
-  color: rgba(255, 255, 255, 0.72);
+  color: $color-text-faint;
   font-size: $text-lg;
   line-height: 1.8;
   margin-bottom: $spacing-md;
@@ -47,7 +57,9 @@
   &:last-child { margin-bottom: 0; }
 }
 
-// ── Gold bullet list ────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Gold bullet list
+// ─────────────────────────────────────────────────────────────
 .bullet-list {
   list-style: none;
   padding: 0;
@@ -73,7 +85,9 @@
   }
 }
 
-// ── Hero role badges ────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Hero role badges
+// ─────────────────────────────────────────────────────────────
 .role-badges {
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +97,7 @@
 
 .role-badge {
   display: inline-block;
-  background-color: rgba(245, 158, 11, 0.12);
+  background-color: $color-accent-glow-lg;
   border: 1px solid $border-accent;
   color: $color-accent-primary;
   padding: 0.4rem 1rem;
@@ -94,7 +108,9 @@
   letter-spacing: 0.5px;
 }
 
-// ── Hero jump-to-section links ──────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Hero jump-to-section links
+// ─────────────────────────────────────────────────────────────
 .hero-jump-links {
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +118,9 @@
   margin-top: $spacing-lg;
 }
 
-// ── Role card (top-accented info block) ─────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Role card (top-accented info block)
+// ─────────────────────────────────────────────────────────────
 .role-card {
   background-color: $color-bg-secondary;
   border: 1px solid $border-soft;
@@ -134,15 +152,19 @@
   }
 }
 
-// ── Highlight strip (subtle gold-tinted block) ──────────────────
+// ─────────────────────────────────────────────────────────────
+// Highlight strip (subtle gold-tinted block)
+// ─────────────────────────────────────────────────────────────
 .highlight-strip {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.03));
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  background: linear-gradient(135deg, $color-accent-glow-md, $color-accent-secondary-glow);
+  border: 1px solid $color-accent-border-faint;
   border-radius: $radius-lg;
   padding: $spacing-lg;
 }
 
-// ── Contact info box (left-gold-border block) ───────────────────
+// ─────────────────────────────────────────────────────────────
+// Contact info box (left-gold-border block)
+// ─────────────────────────────────────────────────────────────
 .contact-info-box {
   background-color: $color-bg-secondary;
   border: 1px solid $border-soft;
@@ -171,7 +193,9 @@
   }
 }
 
-// ── Italic tagline pull-quotes ──────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Italic tagline pull-quotes
+// ─────────────────────────────────────────────────────────────
 .tagline-block {
   display: flex;
   flex-direction: column;
@@ -182,15 +206,17 @@
 .tagline {
   border-left: 3px solid $color-accent-primary;
   padding: 0.75rem 1.25rem;
-  background-color: rgba(245, 158, 11, 0.05);
+  background-color: $color-accent-glow-sm;
   border-radius: 0 $radius-md $radius-md 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: $color-text-softer;
   font-size: $text-lg;
   font-style: italic;
   font-family: $font-primary;
 }
 
-// ── Products grid ───────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Products grid
+// ─────────────────────────────────────────────────────────────
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
@@ -212,7 +238,7 @@
 
   &:hover {
     border-color: $color-accent-primary;
-    background-color: rgba(245, 158, 11, 0.08);
+    background-color: $color-accent-glow-md;
   }
 
   &::before {
@@ -222,7 +248,9 @@
   }
 }
 
-// ── Industries pill grid ────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Industries pill grid
+// ─────────────────────────────────────────────────────────────
 .industries-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -231,17 +259,19 @@
 }
 
 .industry-tag {
-  background-color: rgba(245, 158, 11, 0.09);
-  border: 1px solid rgba(245, 158, 11, 0.28);
+  background-color: $color-accent-glow-md;
+  border: 1px solid $color-accent-border-soft;
   border-radius: $radius-sm;
   padding: 0.5rem 0.75rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: $color-text-near;
   font-size: $text-sm;
   text-align: center;
   font-family: $font-heading;
 }
 
-// ── Centred CTA block ───────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Centred CTA block
+// ─────────────────────────────────────────────────────────────
 .cta-center {
   text-align: center;
   margin-top: $spacing-2xl;
@@ -261,7 +291,9 @@
   }
 }
 
-// ── Spacing utilities ───────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
+// Spacing utilities
+// ─────────────────────────────────────────────────────────────
 .mt-sm  { margin-top: $spacing-sm; }
 .mt-md  { margin-top: $spacing-md; }
 .mt-lg  { margin-top: $spacing-lg; }

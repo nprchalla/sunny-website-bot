@@ -1,75 +1,164 @@
-// Colors
-$color-bg-primary: #1a0f0a; // Dark brown background
-$color-bg-secondary: #2a1f1a; // Slightly lighter brown
-$color-accent-primary: #f59e0b; // Orange/gold
-$color-accent-secondary: #fbbf24; // Lighter gold
-$color-text-primary: #ffffff;
-$color-text-secondary: #d1d5db;
-$color-text-muted: rgba(255, 255, 255, 0.7);
+// ─────────────────────────────────────────────────────────────
+// Core palette
+// ─────────────────────────────────────────────────────────────
+$color-bg-primary:        #1a0f0a;  // Dark brown — page background
+$color-bg-secondary:      #2a1f1a;  // Lighter brown — cards, panels
+$color-bg-alt:            rgba(42, 31, 26, 0.5); // Semi-transparent panel bg
 
-// Border colors
-$border-accent: #f59e0b;
-$border-soft: rgba(255, 255, 255, 0.1);
+$color-accent-primary:    #f59e0b;  // Gold
+$color-accent-secondary:  #fbbf24;  // Light gold
 
+$color-text-primary:      #ffffff;
+$color-text-secondary:    #d1d5db;
+$color-text-muted:        rgba(255, 255, 255, 0.70);
+$color-text-faint:        rgba(255, 255, 255, 0.72); // body-text blocks
+$color-text-softer:       rgba(255, 255, 255, 0.78); // taglines
+$color-text-near:         rgba(255, 255, 255, 0.85); // industry tags
+
+// ─────────────────────────────────────────────────────────────
+// Accent alpha variants (used for tinted backgrounds / borders)
+// ─────────────────────────────────────────────────────────────
+$color-accent-glow-sm:    rgba(245, 158, 11, 0.05);
+$color-accent-glow-md:    rgba(245, 158, 11, 0.08);
+$color-accent-glow-lg:    rgba(245, 158, 11, 0.12);
+$color-accent-border-faint: rgba(245, 158, 11, 0.20);
+$color-accent-border-soft:  rgba(245, 158, 11, 0.28);
+$color-accent-overline:   rgba(245, 158, 11, 0.75);
+$color-accent-shadow-sm:  rgba(245, 158, 11, 0.15);
+$color-accent-shadow-md:  rgba(245, 158, 11, 0.30);
+$color-accent-shadow-lg:  rgba(245, 158, 11, 0.40);
+$color-accent-shadow-xl:  rgba(245, 158, 11, 0.50);
+$color-accent-secondary-glow: rgba(251, 191, 36, 0.03);
+
+// ─────────────────────────────────────────────────────────────
+// Utility alpha variants (white / black overlays)
+// ─────────────────────────────────────────────────────────────
+$color-white-faint:       rgba(255, 255, 255, 0.05);
+$color-white-soft:        rgba(255, 255, 255, 0.10);
+$color-black-shadow-md:   rgba(0, 0, 0, 0.40);
+$color-black-shadow-lg:   rgba(0, 0, 0, 0.50);
+$color-black-shadow-xl:   rgba(0, 0, 0, 0.60);
+
+// ─────────────────────────────────────────────────────────────
+// Header alpha backgrounds
+// ─────────────────────────────────────────────────────────────
+$color-header-bg:         rgba(26, 15, 10, 0.95);
+$color-header-bg-scrolled: rgba(26, 15, 10, 0.98);
+
+// ─────────────────────────────────────────────────────────────
+// Form input colours (light-on-dark fields)
+// ─────────────────────────────────────────────────────────────
+$color-input-bg:          #d1cfc9;
+$color-input-bg-focus:    #e5e2db;
+$color-input-text:        #1a0f0a;   // same hex as $color-bg-primary
+$color-input-placeholder: rgba(26, 15, 10, 0.40);
+$color-input-spinner-track: rgba(26, 15, 10, 0.30);
+
+// ─────────────────────────────────────────────────────────────
+// Feedback colours
+// ─────────────────────────────────────────────────────────────
+$color-error:             #ef4444;
+$color-error-bg:          rgba(239, 68, 68, 0.12);
+$color-error-border:      rgba(239, 68, 68, 0.40);
+$color-error-text:        #fca5a5;
+$color-error-input-bg:    #f9e0e0;
+$color-error-shadow:      rgba(239, 68, 68, 0.15);
+
+$color-success-bg:        rgba(34, 197, 94, 0.12);
+$color-success-border:    rgba(34, 197, 94, 0.40);
+$color-success-text:      #86efac;
+$color-success-icon:      #4ade80;
+
+// ─────────────────────────────────────────────────────────────
+// Social brand colours
+// ─────────────────────────────────────────────────────────────
+$color-facebook:          #1877f2;
+$color-linkedin:          #0a66c2;
+
+// ─────────────────────────────────────────────────────────────
+// Image placeholder
+// ─────────────────────────────────────────────────────────────
+$color-img-placeholder:   #e5e5e5;
+
+// ─────────────────────────────────────────────────────────────
+// Border colours
+// ─────────────────────────────────────────────────────────────
+$border-accent:           $color-accent-primary;
+$border-soft:             rgba(255, 255, 255, 0.10);
+
+// ─────────────────────────────────────────────────────────────
 // Typography
-$font-primary: 'Alegreya', serif;
-$font-primary-sc: 'Alegreya SC', serif; // For small caps variant
-$font-display: 'Bokor', serif; // For "Sunny Reddy" decorative text
-$font-heading: 'Alegreya SC', serif; // For hero headline text
+// ─────────────────────────────────────────────────────────────
+$font-primary:    'Alegreya', serif;
+$font-primary-sc: 'Alegreya SC', serif;
+$font-display:    'Bokor', serif;
+$font-heading:    'Alegreya SC', serif;
 
-// Font sizes
-$text-xs: 0.75rem;    // 12px
-$text-sm: 0.875rem;   // 14px
-$text-base: 1rem;     // 16px
-$text-lg: 1.125rem;   // 18px
-$text-xl: 1.25rem;    // 20px
-$text-2xl: 1.5rem;    // 24px
-$text-3xl: 1.875rem;  // 30px
-$text-4xl: 2.25rem;   // 36px
-$text-5xl: 3rem;      // 48px
-$text-6xl: 3.75rem;   // 60px
-$text-7xl: 4.5rem;    // 72px
+$text-xs:   0.75rem;
+$text-sm:   0.875rem;
+$text-base: 1rem;
+$text-lg:   1.125rem;
+$text-xl:   1.25rem;
+$text-2xl:  1.5rem;
+$text-3xl:  1.875rem;
+$text-4xl:  2.25rem;
+$text-5xl:  3rem;
+$text-6xl:  3.75rem;
+$text-7xl:  4.5rem;
 
-// Font weights
-$weight-normal: 400;
-$weight-medium: 500;
+$weight-normal:   400;
+$weight-medium:   500;
 $weight-semibold: 600;
-$weight-bold: 700;
+$weight-bold:     700;
 
+// ─────────────────────────────────────────────────────────────
 // Spacing
-$spacing-xs: 0.5rem;   // 8px
-$spacing-sm: 1rem;     // 16px
-$spacing-md: 1.5rem;   // 24px
-$spacing-lg: 2rem;     // 32px
-$spacing-xl: 3rem;     // 48px
-$spacing-2xl: 4rem;    // 64px
-$spacing-3xl: 6rem;    // 96px
+// ─────────────────────────────────────────────────────────────
+$spacing-xs:  0.50rem;
+$spacing-sm:  1.00rem;
+$spacing-md:  1.50rem;
+$spacing-lg:  2.00rem;
+$spacing-xl:  3.00rem;
+$spacing-2xl: 4.00rem;
+$spacing-3xl: 6.00rem;
 
+// ─────────────────────────────────────────────────────────────
 // Border radius
-$radius-sm: 4px;
-$radius-md: 8px;
-$radius-lg: 12px;
-$radius-xl: 16px;
+// ─────────────────────────────────────────────────────────────
+$radius-sm:   4px;
+$radius-md:   8px;
+$radius-lg:   12px;
+$radius-xl:   16px;
 $radius-full: 9999px;
 
-// Container & Layout
-$max-width: 1200px;
-$max-width-lg: 1400px;
+// ─────────────────────────────────────────────────────────────
+// Layout
+// ─────────────────────────────────────────────────────────────
+$max-width:         1200px;
+$max-width-lg:      1400px;
 $container-padding: 2rem;
+$header-height:     80px;
+$page-top-padding:  140px;  // accounts for fixed header
 
+// ─────────────────────────────────────────────────────────────
 // Breakpoints
+// ─────────────────────────────────────────────────────────────
 $breakpoint-sm: 640px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
 
+// ─────────────────────────────────────────────────────────────
 // Transitions
+// ─────────────────────────────────────────────────────────────
 $transition-fast: 150ms ease;
 $transition-base: 250ms ease;
 $transition-slow: 350ms ease;
 
-// Z-index
-$z-header: 1000;
-$z-dropdown: 1100;
-$z-modal: 1200;
+// ─────────────────────────────────────────────────────────────
+// Z-index scale
+// ─────────────────────────────────────────────────────────────
+$z-header:      1000;
+$z-dropdown:    1100;
+$z-modal:       1200;
 $z-chat-widget: 1300;
