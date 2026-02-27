@@ -1,19 +1,19 @@
 // ─────────────────────────────────────────────────────────────
 // Core palette
 // ─────────────────────────────────────────────────────────────
-$color-bg-primary:        #1a0f0a;  // Dark brown — page background
-$color-bg-secondary:      #2a1f1a;  // Lighter brown — cards, panels
-$color-bg-alt:            rgba(42, 31, 26, 0.5); // Semi-transparent panel bg
+$color-bg-primary:        #F9F5EB;  // Dark brown — page background
+$color-bg-secondary:      #EEE8DD;  // Lighter brown — cards, panels
+$color-bg-alt:            #FAFBFF; // Semi-transparent panel bg
 
-$color-accent-primary:    #f59e0b;  // Gold
-$color-accent-secondary:  #fbbf24;  // Light gold
+$color-accent-primary:    #2E3F6A;  // Gold
+$color-accent-secondary:  #335099;  // Light gold
 
-$color-text-primary:      #ffffff;
-$color-text-secondary:    #d1d5db;
-$color-text-muted:        rgba(255, 255, 255, 0.70);
-$color-text-faint:        rgba(255, 255, 255, 0.72); // body-text blocks
-$color-text-softer:       rgba(255, 255, 255, 0.78); // taglines
-$color-text-near:         rgba(255, 255, 255, 0.85); // industry tags
+$color-text-primary:      #000000;
+$color-text-secondary:    #303030;
+$color-text-muted:        rgba(0, 0, 0, 0.85);
+$color-text-faint:        rgba(0, 0, 0, 0.78); // body-text blocks
+$color-text-softer:       rgba(0, 0, 0, 0.72); // taglines
+$color-text-near:         rgba(0, 0, 0, 0.7); // industry tags
 
 // ─────────────────────────────────────────────────────────────
 // Accent alpha variants (used for tinted backgrounds / borders)
@@ -42,8 +42,8 @@ $color-black-shadow-xl:   rgba(0, 0, 0, 0.60);
 // ─────────────────────────────────────────────────────────────
 // Header alpha backgrounds
 // ─────────────────────────────────────────────────────────────
-$color-header-bg:         rgba(26, 15, 10, 0.95);
-$color-header-bg-scrolled: rgba(26, 15, 10, 0.98);
+$color-header-bg:         #F0F4FF;
+$color-header-bg-scrolled: #F0F4FF;
 
 // ─────────────────────────────────────────────────────────────
 // Form input colours (light-on-dark fields)

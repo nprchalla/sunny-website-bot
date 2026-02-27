@@ -54,15 +54,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Header background on scroll
 const header = document.querySelector('.header');
+colorHeaderBg = '#F0F4FF'
+colorHeaderBgScrolled = '#F0F4FF'
 let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
   if (currentScroll > 100) {
-    header.style.backgroundColor = 'rgba(26, 15, 10, 0.98)';
+    header.style.backgroundColor = colorHeaderBg;
   } else {
-    header.style.backgroundColor = 'rgba(26, 15, 10, 0.95)';
+    header.style.backgroundColor = colorHeaderBgScrolled;
   }
   
   lastScroll = currentScroll;
