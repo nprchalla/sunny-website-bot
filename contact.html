@@ -33,7 +33,7 @@
                 <a href="wayne-state.html"   class="nav__link">Wayne State</a>
                 <a href="michigan-gop.html"  class="nav__link">Michigan GOP</a>
                 <a href="contact.html"      class="nav__link">Contact</a>
-                <a href="#speak"             class="btn btn--primary">Speak with Sunny</a>
+                <a href="chatbot.html"             class="btn btn--primary">Speak with Sunny</a>
             </nav>
 
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -47,7 +47,7 @@
             <a href="about.html" class="mobile-nav__link">About</a>
             <a href="#playbooks" class="mobile-nav__link">Playbooks</a>
             <a href="contact.html" class="mobile-nav__link">Contact</a>
-            <a href="#speak" class="mobile-nav__link">Speak with Sunny</a>
+            <a href="chatbot.html" class="mobile-nav__link">Speak with Sunny</a>
         </nav>
     </header>
 
@@ -193,9 +193,11 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
         </button>
-        <div class="chat-widget__window"></div>
+        <!-- <div class="chat-widget__window"></div> -->
+         <elevenlabs-convai class="sunny-float" agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"></elevenlabs-convai>
+  
     </div>
-
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     <script src="./src/js/main.js"></script>
     <script src="./src/js/contact.js"></script>
 </body>

@@ -32,7 +32,7 @@
                 <a href="about.html" class="nav__link">About</a>
                 <a href="#playbooks" class="nav__link nav__link--dropdown">Playbooks</a>
                 <a href="contact.html" class="nav__link">Contact</a>
-                <a href="#speak" class="btn btn--primary">Speak with Sunny</a>
+                <a href="chatbot.html" class="btn btn--primary">Speak with Sunny</a>
             </nav>
 
             <!-- Mobile Menu Toggle -->
@@ -48,7 +48,7 @@
             <a href="about.html" class="mobile-nav__link">About</a>
             <a href="#playbooks" class="mobile-nav__link">Playbooks</a>
             <a href="#contact" class="mobile-nav__link">Contact</a>
-            <a href="#speak" class="mobile-nav__link">Speak with Sunny</a>
+            <a href="chatbot.html" class="mobile-nav__link">Speak with Sunny</a>
         </nav>
     </header>
 
@@ -239,11 +239,13 @@
             </svg>
         </button>
         
-        <div class="chat-widget__window">
+        <!-- <div class="chat-widget__window"> -->
             <!-- Chat interface will be built here -->
-        </div>
+        <!-- </div> -->
+        <elevenlabs-convai class="sunny-float" agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"></elevenlabs-convai>
     </div>
 
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
     <script src="./src/js/main.js"></script>
     <script src="./src/js/accordion.js"></script>
 </body>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SunnyReddyAI — Chat</title>
+  <link rel="stylesheet" href="./chatbot.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="dot"></div>
+        <div>
+          <div class="title">SunnyReddyAI</div>
+          <div class="subtitle" id="statusText">Disconnected</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="connectBtn" class="btn">Connect</button>
+        <button id="endBtn" class="btn btn-ghost" disabled>End</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div id="messages" class="messages"></div>
+    </main>
+
+    <footer class="composer">
+      <button id="callBtn" class="btn btn-call" disabled>Call (Mic Off)</button>
+
+      <input id="textInput" class="input" placeholder="Type a message..." />
+      <button id="sendBtn" class="btn" disabled>Send</button>
+    </footer>
+  </div>
+
+  <script type="module" src="./chatbot.js"></script>
+</body>
+</html>
