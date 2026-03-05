@@ -1,329 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-        name="description"
-        content="Sunny Reddy, elected Governor of Wayne State University — alumnus and board leader committed to academic excellence, student success, and STEM education."
-    />
-    <title>Sunny Reddy — Governor, Wayne State University</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Sunny Reddy, elected Governor of Wayne State University — alumnus and board leader committed to academic excellence, student success, and STEM education."
+  />
+  <title>Sunny Reddy — Governor, Wayne State University</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="./src/scss/main.scss" />
+  <!-- NOTE:
+       Removed SCSS import. Styles will be bundled by Vite from main.js
+  -->
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container header__container">
-            <a href="index.html" class="logo">
-                <div class="logo__icon">SR</div>
-            </a>
 
-            <nav class="nav">
-                <a href="voip-office.html"  class="nav__link">VoIP Office</a>
-                <a href="wayne-state.html"  class="nav__link">Wayne State</a>
-                <a href="michigan-gop.html" class="nav__link">Michigan GOP</a>
-                <a href="contact.html"     class="nav__link">Contact</a>
-                <a href="chatbot.html"            class="btn btn--primary">Speak with Sunny</a>
-            </nav>
+<header class="header">
+  <div class="container header__container">
+    <a href="index.html" class="logo">
+      <div class="logo__icon">SR</div>
+    </a>
 
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <nav class="nav">
+      <a href="voip-office.html" class="nav__link">VoIP Office</a>
+      <a href="wayne-state.html" class="nav__link">Wayne State</a>
+      <a href="michigan-gop.html" class="nav__link">Michigan GOP</a>
+      <a href="contact.html" class="nav__link">Contact</a>
+      <a href="chatbot.html" class="btn btn--primary">Speak with Sunny</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav">
+    <a href="voip-office.html" class="mobile-nav__link">VoIP Office</a>
+    <a href="wayne-state.html" class="mobile-nav__link">Wayne State</a>
+    <a href="michigan-gop.html" class="mobile-nav__link">Michigan GOP</a>
+    <a href="contact.html" class="mobile-nav__link">Contact</a>
+    <a href="chatbot.html" class="mobile-nav__link">Speak with Sunny</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="about-hero">
+  <div class="container about-hero__container">
+    <div class="about-hero__image-wrapper">
+      <img src="./src/assets/images/sunnyreddy.jpeg"
+           alt="Sunny Reddy, Wayne State University Governor"
+           class="about-hero__image" />
+    </div>
+
+    <div class="about-hero__content">
+      <span class="overline">Higher Education Leadership</span>
+      <h1 class="about-hero__title">
+        Governor, <span class="text-accent">Wayne State University</span>
+      </h1>
+      <p class="about-hero__description">
+        A proud alumnus and elected Governor, Sunny Reddy champions academic
+        excellence, student success, and the integrity of higher education at
+        Wayne State University.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <div class="two-col-grid two-col-grid--align-center">
+
+      <div>
+        <span class="overline">About</span>
+        <h2 class="section-title">Sunny Reddy at Wayne State</h2>
+
+        <p class="body-text">
+          Sunny Reddy is an elected Governor of Wayne State University and a proud
+          alumnus. He earned his Master's Degree in Chemical Engineering from Wayne
+          State University in 1994.
+        </p>
+
+        <p class="body-text">
+          His leadership reflects a strong commitment to academic excellence,
+          student success, and maintaining the integrity and strength of higher
+          education.
+        </p>
+      </div>
+
+      <div class="role-card">
+        <p class="role-card__label">Leadership Role</p>
+        <h3 class="role-card__heading">Governor, Wayne State University</h3>
+
+        <p class="role-card__text">
+          As a Governor, Sunny helps provide leadership and oversight to support
+          the university's continued growth and academic mission. His focus includes
+          strengthening educational excellence, supporting students, and helping
+          prepare graduates for future career success.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section principles-section section--alt">
+  <div class="container">
+    <span class="overline">Principles</span>
+    <h2 class="section-title">Publicly Stated Principles</h2>
+
+    <div class="accordion">
+
+      <div class="accordion__item">
+        <button class="accordion__header">
+          <span>STEM & Innovation</span>
+          <span class="accordion__icon">+</span>
+        </button>
+
+        <div class="accordion__content">
+          <p>
+            Sunny champions STEM education as a pathway to opportunity,
+            supporting programs that connect students with real-world skills
+            and career readiness in technology and engineering fields.
+          </p>
         </div>
+      </div>
 
-        <nav class="mobile-nav">
-            <a href="voip-office.html"  class="mobile-nav__link">VoIP Office</a>
-            <a href="wayne-state.html"  class="mobile-nav__link">Wayne State</a>
-            <a href="michigan-gop.html" class="mobile-nav__link">Michigan GOP</a>
-            <a href="contact.html"     class="mobile-nav__link">Contact</a>
-            <a href="chatbot.html"            class="mobile-nav__link">Speak with Sunny</a>
-        </nav>
-    </header>
+      <div class="accordion__item">
+        <button class="accordion__header">
+          <span>Affordable Education</span>
+          <span class="accordion__icon">+</span>
+        </button>
 
-    <main>
+        <div class="accordion__content">
+          <p>
+            Sunny believes higher education should remain accessible to qualified
+            students and supports initiatives that help reduce financial barriers
+            for Michigan families.
+          </p>
+        </div>
+      </div>
 
-        <!-- Page Hero -->
-        <section class="about-hero">
-            <div class="container about-hero__container">
-                <div class="about-hero__image-wrapper">
-                    <img src="./src/assets/images/sunnyreddy.jpeg" alt="Sunny Reddy, Wayne State University Governor" class="about-hero__image">
-                </div>
-                <div class="about-hero__content">
-                    <span class="overline">Higher Education Leadership</span>
-                    <h1 class="about-hero__title">
-                        Governor, <span class="text-accent">Wayne State University</span>
-                    </h1>
-                    <p class="about-hero__description">
-                        A proud alumnus and elected Governor, Sunny Reddy champions academic
-                        excellence, student success, and the integrity of higher education at
-                        Wayne State University.
-                    </p>
-                </div>
-            </div>
-        </section>
+    </div>
+  </div>
+</section>
 
-        <!-- About -->
-        <section class="section section--alt">
-            <div class="container">
-                <div class="two-col-grid two-col-grid--align-center">
+</main>
 
-                    <div>
-                        <span class="overline">About</span>
-                        <h2 class="section-title">Sunny Reddy at Wayne State</h2>
-                        <p class="body-text">
-                            Sunny Reddy is an elected Governor of Wayne State University and a proud
-                            alumnus. He earned his Master's Degree in Chemical Engineering from Wayne
-                            State University in 1994.
-                        </p>
-                        <p class="body-text">
-                            His leadership reflects a strong commitment to academic excellence,
-                            student success, and maintaining the integrity and strength of higher
-                            education.
-                        </p>
-                    </div>
+<!-- ElevenLabs Chat -->
+<elevenlabs-convai
+  class="sunny-float"
+  agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq">
+</elevenlabs-convai>
 
-                    <div class="role-card">
-                        <p class="role-card__label">Leadership Role</p>
-                        <h3 class="role-card__heading">Governor, Wayne State University</h3>
-                        <p class="role-card__text">
-                            As a Governor, Sunny helps provide leadership and oversight to support
-                            the university's continued growth and academic mission. His focus includes
-                            strengthening educational excellence, supporting students, and helping
-                            prepare graduates for future career success.
-                        </p>
-                    </div>
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+        async
+        type="text/javascript"></script>
 
-                </div>
-            </div>
-        </section>
+<!-- Accordion -->
+<script type="module" src="/src/js/accordion.js"></script>
 
-        <!-- Mission & Vision -->
-        <section class="section section--dark">
-            <div class="container">
-                <div class="two-col-grid">
+<!-- Vite entry -->
+<script type="module" src="/src/js/main.js"></script>
 
-                    <div>
-                        <span class="overline">Direction</span>
-                        <h2 class="section-title">Mission &amp; Vision</h2>
-                        <p class="body-text">
-                            Sunny's vision for Wayne State University focuses on:
-                        </p>
-                        <ul class="bullet-list mb-lg">
-                            <li>Supporting academic excellence</li>
-                            <li>Advancing STEM education</li>
-                            <li>Promoting student success</li>
-                            <li>Supporting educational opportunity</li>
-                        </ul>
-                        <p class="body-text">
-                            His leadership reflects a commitment to helping students succeed and
-                            ensuring the university continues to serve future generations.
-                        </p>
-                        <div class="tagline-block">
-                            <div class="tagline">Leadership Supporting Education</div>
-                            <div class="tagline">Committed to Academic Excellence</div>
-                            <div class="tagline">Advancing Student Success</div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <span class="overline">Initiatives</span>
-                        <h2 class="section-title">University Initiatives</h2>
-                        <p class="body-text">Sunny supports initiatives that strengthen:</p>
-                        <ul class="bullet-list mb-lg">
-                            <li>Academic excellence</li>
-                            <li>Student opportunity</li>
-                            <li>Campus leadership</li>
-                            <li>Educational advancement</li>
-                        </ul>
-                        <p class="body-text">
-                            He is committed to supporting programs that help students succeed
-                            academically and professionally.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Core Values + Community -->
-        <section class="section section--alt">
-            <div class="container">
-                <div class="two-col-grid">
-
-                    <div>
-                        <span class="overline">Values</span>
-                        <h2 class="section-title">Core Values</h2>
-                        <p class="body-text">Sunny's leadership is guided by:</p>
-                        <ul class="bullet-list">
-                            <li>Academic excellence</li>
-                            <li>Merit and opportunity</li>
-                            <li>Student success</li>
-                            <li>Educational integrity</li>
-                        </ul>
-                    </div>
-
-                    <div class="highlight-strip">
-                        <span class="overline">Community</span>
-                        <h3 class="sub-title mt-sm">Community &amp; Philanthropy</h3>
-                        <p class="body-text">
-                            Sunny has supported community and charitable efforts, including:
-                        </p>
-                        <ul class="bullet-list mb-lg">
-                            <li>COVID-19 relief support</li>
-                            <li>Disaster relief assistance</li>
-                            <li>Community fundraising initiatives</li>
-                        </ul>
-                        <p class="body-text">
-                            His work reflects a commitment to helping communities during times of need.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Facts + Contact -->
-        <section class="section quick-facts section--dark">
-            <div class="container">
-                <div class="two-col-grid">
-
-                    <div>
-                        <h2 class="quick-facts__title">Quick Facts</h2>
-                        <ul class="quick-facts__list">
-                            <li>Elected Governor, Wayne State University Board of Governors</li>
-                            <li>M.S. Chemical Engineering, Wayne State University, 1994</li>
-                            <li>Board Member, Michigan Opera Theatre</li>
-                            <li>Passionate about practical leadership and STEM</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <span class="overline">Get in Touch</span>
-                        <h2 class="section-title">Contact Information</h2>
-                        <div class="contact-info-box">
-                            <span class="contact-info-box__label">Phone</span>
-                            <p class="contact-info-box__value">+1 248-744-6900</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Publicly Stated Principles -->
-        <section class="section principles-section section--alt">
-            <div class="container">
-                <span class="overline">Principles</span>
-                <h2 class="section-title">Publicly Stated Principles</h2>
-
-                <div class="accordion">
-                    <div class="accordion__item">
-                        <button class="accordion__header">
-                            <span>STEM &amp; Innovation</span>
-                            <span class="accordion__icon">+</span>
-                        </button>
-                        <div class="accordion__content">
-                            <p>Sunny champions STEM education as a pathway to opportunity, supporting
-                            programs that connect students with real-world skills and career readiness
-                            in technology, engineering, and innovation-driven fields.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion__item">
-                        <button class="accordion__header">
-                            <span>Affordable Education</span>
-                            <span class="accordion__icon">+</span>
-                        </button>
-                        <div class="accordion__content">
-                            <p>Sunny believes higher education should be accessible to all qualified
-                            students. He supports initiatives that reduce financial barriers and
-                            ensure Wayne State remains an affordable, high-quality institution for
-                            Michigan residents.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion__item">
-                        <button class="accordion__header">
-                            <span>Climate Policy</span>
-                            <span class="accordion__icon">+</span>
-                        </button>
-                        <div class="accordion__content">
-                            <p>Committed to responsible environmental stewardship, Sunny supports
-                            evidence-based climate policies that balance economic growth with
-                            long-term sustainability for Michigan communities.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Key Highlights + Bios -->
-        <section class="section section--dark">
-            <div class="container">
-                <h2 class="section-title">Key Highlights</h2>
-                <ul class="bullet-list mb-xl">
-                    <li>Governor of Wayne State University</li>
-                    <li>Wayne State alumnus — M.S. Chemical Engineering, 1994</li>
-                    <li>Supports academic excellence and student success</li>
-                    <li>Focused on STEM advancement and educational opportunity</li>
-                </ul>
-
-                <div class="two-col-grid">
-                    <div class="highlight-strip">
-                        <h3 class="sub-title">Short Bio</h3>
-                        <p class="body-text">
-                            Sunny Reddy is an elected Governor of Wayne State University and alumnus
-                            committed to academic excellence and student success.
-                        </p>
-                    </div>
-                    <div class="highlight-strip">
-                        <h3 class="sub-title">Long Bio</h3>
-                        <p class="body-text">
-                            Sunny Reddy earned his Master's Degree in Chemical Engineering from Wayne
-                            State University and now serves as an elected Governor. His leadership
-                            focuses on supporting academic excellence, strengthening educational
-                            opportunity, and helping students succeed.
-                        </p>
-                    </div>
-                </div>
-
-                <div id="speak" class="cta-center">
-                    <h2 class="cta-center__heading">Speak with Sunny</h2>
-                    <p class="cta-center__text">
-                        Questions about education, student success, or Wayne State University?
-                        Start a conversation with Sunny's AI.
-                    </p>
-                    <a href="chatbot.html" class="btn btn--primary">Access Sunny AI</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Chat Widget -->
-    <!-- <div class="chat-widget">
-        <button class="chat-widget__trigger" aria-label="Open chat">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-            </svg>
-        </button> -->
-        <!-- <div class="chat-widget__window"> -->
-            <elevenlabs-convai class="sunny-float" agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"></elevenlabs-convai>
-  
-            <!-- Chat interface will be built here -->
-        <!-- </div> -->
-    <!-- </div> -->
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-    <script src="./src/js/main.js"></script>
-    <script src="./src/js/accordion.js"></script>
 </body>
 </html>

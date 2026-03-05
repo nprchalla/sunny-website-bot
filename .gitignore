@@ -1,19 +1,23 @@
-# Node
+# Dependencies
 node_modules/
+
+# Build output
+dist/
+.vite/
 
 # Environment variables
 .env
 
-# Virtual Environment
-.venv
+# Python virtual environments (if used)
+.venv/
 
-# ZIP / backups
+# Backup files
 *.zip
-sunny-voice-server/node_modules/
-sunny-voice-server/.env
-
 
 # OS files
 .DS_Store
 Thumbs.db
 
+# Sunny voice server (backend)
+sunny-voice-server/node_modules/
+sunny-voice-server/.env

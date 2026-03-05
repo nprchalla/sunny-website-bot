@@ -6,43 +6,43 @@
   <title>SunnyReddyAI — Speak with Sunny</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet" />
 
-  <!-- ONE stylesheet — main.scss compiles everything including _chatbot.scss -->
-  <!-- Make sure chatbot.css is deleted or NOT linked here -->
-  <link rel="stylesheet" href="./src/scss/main.scss" />
+  <!-- NOTE:
+       Removed direct SCSS import:
+       <link rel="stylesheet" href="./src/scss/main.scss" />
+       SCSS must be imported in /src/js/main.js so Vite bundles it into /dist/assets/*.css
+  -->
 </head>
 
 <body class="chatbot-page">
-
   <!-- ── Shared site header ──────────────────────────────── -->
   <header class="header">
     <div class="container header__container">
-        <a href="index.html" class="logo">
-            <div class="logo__icon">SR</div>
-        </a>
+      <a href="index.html" class="logo">
+        <div class="logo__icon">SR</div>
+      </a>
 
-        <nav class="nav">
-            <a href="voip-office.html"   class="nav__link">VoIP Office</a>
-            <a href="wayne-state.html"   class="nav__link">Wayne State</a>
-            <a href="michigan-gop.html"  class="nav__link">Michigan GOP</a>
-            <a href="contact.html"      class="nav__link">Contact</a>
-            <a href="chatbot.html"             class="btn btn--primary">Speak with Sunny</a>
-        </nav>
+      <nav class="nav">
+        <a href="voip-office.html" class="nav__link">VoIP Office</a>
+        <a href="wayne-state.html" class="nav__link">Wayne State</a>
+        <a href="michigan-gop.html" class="nav__link">Michigan GOP</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+        <a href="chatbot.html" class="btn btn--primary">Speak with Sunny</a>
+      </nav>
 
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <!-- ── Chat window ─────────────────────────────────────── -->
   <main class="chat-main">
-
     <!-- Top bar: avatar + name/status + connect/end -->
     <div class="chat-topbar">
       <div class="chat-brand">
@@ -52,9 +52,10 @@
           <div class="chat-brand__status" id="statusText">Disconnected</div>
         </div>
       </div>
+
       <div class="chat-actions">
         <button id="connectBtn" class="btn btn--outline btn--sm">Connect</button>
-        <button id="endBtn"     class="btn btn--ghost   btn--sm" disabled>End</button>
+        <button id="endBtn" class="btn btn--ghost btn--sm" disabled>End</button>
       </div>
     </div>
 
@@ -74,23 +75,24 @@
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
              stroke="currentColor" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round"
-            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
         </svg>
       </div>
-      <div class="chat-call-overlay__label" id="callLabel">Call in progress</div>
-      <div class="chat-call-overlay__sub"   id="callSub">Speak naturally — Sunny is listening</div>
-    </div>
 
+      <div class="chat-call-overlay__label" id="callLabel">Call in progress</div>
+      <div class="chat-call-overlay__sub" id="callSub">Speak naturally — Sunny is listening</div>
+    </div>
   </main>
 
   <!-- ── Composer footer ─────────────────────────────────── -->
   <footer class="chat-composer">
-    <button id="callBtn"  class="btn btn--call"           disabled>Call (Mic Off)</button>
-    <input  id="textInput" class="chat-input"             placeholder="Type a message…" disabled />
-    <button id="sendBtn"  class="btn btn--primary btn--sm" disabled>Send</button>
+    <button id="callBtn" class="btn btn--call" disabled>Call (Mic Off)</button>
+    <input id="textInput" class="chat-input" placeholder="Type a message…" disabled />
+    <button id="sendBtn" class="btn btn--primary btn--sm" disabled>Send</button>
   </footer>
 
-  <script src="./src/js/main.js"></script>
-  <script type="module" src="./src/js/chatbot.js"></script>
+  <!-- Vite Bundled Scripts (MODULE) -->
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/chatbot.js"></script>
 </body>
 </html>
