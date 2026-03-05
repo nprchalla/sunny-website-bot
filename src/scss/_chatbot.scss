@@ -1,0 +1,363 @@
+@use 'variables' as *;
+
+// ─────────────────────────────────────────────────────────────
+// Chatbot page shell
+// Full-height 3-row grid: fixed header / flex chat body / composer
+// ─────────────────────────────────────────────────────────────
+.chatbot-page {
+  // The shared .header is position:fixed and 80px tall.
+  // We push the grid content below it with padding-top.
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $color-bg-primary;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Main chat area — fills remaining height between header & footer
+// ─────────────────────────────────────────────────────────────
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-sm $spacing-md;
+  padding-top: calc(80px + #{$spacing-sm}); // clear fixed header
+  overflow: hidden;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  gap: $spacing-sm;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-md $spacing-lg;
+    padding-top: calc(80px + #{$spacing-md});
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Top bar: brand identity + action buttons
+// ─────────────────────────────────────────────────────────────
+.chat-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: $spacing-sm;
+  border-bottom: 1px solid $border-soft;
+  flex-shrink: 0;
+}
+
+.chat-brand {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  &__avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: $radius-full;
+    background-color: $color-accent-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-display;
+    font-size: $text-base;
+    font-weight: $weight-bold;
+    color: $color-bg-primary;
+    flex-shrink: 0;
+    position: relative;
+
+    // Animated ring when connected
+    &.is-connected::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: $radius-full;
+      border: 2px solid $color-accent-primary;
+      animation: chat-pulse 2s ease-out infinite;
+    }
+  }
+
+  &__name {
+    font-family: $font-heading;
+    font-size: $text-lg;
+    color: $color-text-primary;
+    font-weight: $weight-bold;
+    line-height: 1.2;
+  }
+
+  &__status {
+    font-size: $text-sm;
+    color: $color-text-muted;
+    transition: color $transition-base;
+    line-height: 1.2;
+
+    &--connected { color: $color-accent-primary; }
+    &--listening { color: #4ade80; }
+    &--speaking  { color: $color-accent-secondary; }
+  }
+}
+
+.chat-actions {
+  display: flex;
+  gap: $spacing-xs;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Message list
+// ─────────────────────────────────────────────────────────────
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-xs 2px;
+
+  // Thin gold scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 158, 11, 0.25) transparent;
+
+  &::-webkit-scrollbar       { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: $radius-full;
+  }
+}
+
+// Empty state shown before any messages
+.chat-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  text-align: center;
+  color: $color-text-muted;
+  padding: $spacing-2xl $spacing-lg;
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: $radius-full;
+    background-color: rgba(245, 158, 11, 0.10);
+    border: 2px solid rgba(245, 158, 11, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-display;
+    font-size: $text-xl;
+    color: $color-accent-primary;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $text-xl;
+    color: $color-text-primary;
+    margin: 0;
+  }
+
+  &__sub {
+    font-size: $text-base;
+    color: $color-text-muted;
+    max-width: 320px;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Message bubbles
+// ─────────────────────────────────────────────────────────────
+.chat-msg {
+  max-width: 78%;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-lg;
+  animation: msg-in 0.18s ease;
+
+  &__meta {
+    font-family: $font-heading;
+    font-size: $text-xs;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: $color-text-muted;
+    margin-bottom: 4px;
+  }
+
+  &__body {
+    font-size: $text-base;
+    line-height: 1.65;
+    color: $color-text-primary;
+  }
+
+  // User bubble — right, gold tint
+  &--user {
+    align-self: flex-end;
+    background: rgba(245, 158, 11, 0.10);
+    border: 1px solid rgba(245, 158, 11, 0.22);
+    border-bottom-right-radius: $radius-sm;
+
+    .chat-msg__meta { color: $color-accent-secondary; }
+  }
+
+  // Assistant bubble — left, panel bg
+  &--assistant {
+    align-self: flex-start;
+    background: $color-bg-secondary;
+    border: 1px solid $border-soft;
+    border-bottom-left-radius: $radius-sm;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Call-mode overlay (replaces message list during voice call)
+// ─────────────────────────────────────────────────────────────
+.chat-call-overlay {
+  display: none; // shown via body.call-mode
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
+  text-align: center;
+
+  &__ring {
+    width: 100px;
+    height: 100px;
+    border-radius: $radius-full;
+    background: rgba(245, 158, 11, 0.08);
+    border: 2px solid rgba(245, 158, 11, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: call-breathe 2.2s ease-in-out infinite;
+
+    svg {
+      width: 38px;
+      height: 38px;
+      color: $color-accent-primary;
+    }
+  }
+
+  &__label {
+    font-family: $font-heading;
+    font-size: $text-2xl;
+    color: $color-text-primary;
+  }
+
+  &__sub {
+    font-size: $text-base;
+    color: $color-text-muted;
+  }
+}
+
+// Swap message list ↔ call overlay based on body class
+body.call-mode {
+  .chat-messages     { display: none; }
+  .chat-call-overlay { display: flex; }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Composer (input row pinned to bottom)
+// ─────────────────────────────────────────────────────────────
+.chat-composer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-md;
+  border-top: 1px solid $border-soft;
+  background-color: $color-bg-primary;
+  flex-shrink: 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-sm $spacing-lg;
+  }
+}
+
+.chat-input {
+  width: 100%;
+  padding: 0.75rem $spacing-sm;
+  border-radius: $radius-md;
+  border: 1px solid $border-soft;
+  background: $color-bg-secondary;
+  color: $color-text-primary;
+  font-family: $font-primary;
+  font-size: $text-base;
+  outline: none;
+  transition: border-color $transition-base, background-color $transition-base;
+
+  &::placeholder { color: $color-text-muted; }
+
+  &:focus {
+    border-color: rgba(245, 158, 11, 0.45);
+    background-color: rgba(42, 31, 26, 0.9);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Call button — ghost style with live state
+// ─────────────────────────────────────────────────────────────
+.btn--call {
+  min-width: 130px;
+  background: transparent;
+  border: 1px solid $border-soft;
+  color: $color-text-secondary;
+  font-family: $font-heading;
+  font-size: $text-sm;
+  letter-spacing: 0.5px;
+  padding: 0.75rem $spacing-sm;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover:not(:disabled) {
+    border-color: rgba(245, 158, 11, 0.4);
+    color: $color-accent-primary;
+    background: rgba(245, 158, 11, 0.06);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  // Live call state — green glow
+  &.is-live {
+    border-color: rgba(74, 222, 128, 0.5);
+    color: #4ade80;
+    box-shadow: 0 0 18px rgba(74, 222, 128, 0.15);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Animations
+// ─────────────────────────────────────────────────────────────
+@keyframes chat-pulse {
+  0%   { opacity: 0.8; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(1.6); }
+}
+
+@keyframes call-breathe {
+  0%, 100% { transform: scale(1);    box-shadow: 0 0 0   0   rgba(245, 158, 11, 0); }
+  50%       { transform: scale(1.06); box-shadow: 0 0 28px 6px rgba(245, 158, 11, 0.12); }
+}
+
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Suppress ElevenLabs launcher widget
+// ─────────────────────────────────────────────────────────────
+elevenlabs-launcher,
+.elevenlabs-launcher,
+[class*="launcher"] { display: none !important; }
