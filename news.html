@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="About Sunny Reddy — Michigan-based entrepreneur, Wayne State University Governor, Co-Chair & Treasurer of the Michigan GOP. Recent events, speeches, articles, and achievements."
+    />
+    <title>News — Sunny Reddy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/scss/main.scss" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="logo">
+                <div class="logo__icon">SR</div>
+            </a>
+
+            <nav class="nav">
+                
+                <a href="voip-office.html"   class="nav__link">VoIP Office</a>
+                <a href="wayne-state.html"   class="nav__link">Wayne State</a>
+                <a href="michigan-gop.html"  class="nav__link">Michigan GOP</a>
+                <a href="news.html"         class="nav__link nav__link--active">News</a>
+                <a href="contact.html"       class="nav__link">Contact</a>
+                <a href="chatbot.html"       class="btn btn--primary">Speak with Sunny</a>
+            </nav>
+
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="mobile-nav">
+            
+            <a href="voip-office.html"   class="mobile-nav__link">VoIP Office</a>
+            <a href="wayne-state.html"   class="mobile-nav__link">Wayne State</a>
+            <a href="michigan-gop.html"  class="mobile-nav__link">Michigan GOP</a>
+            <a href="news.html"         class="mobile-nav__link">News</a>
+            <a href="contact.html"       class="mobile-nav__link">Contact</a>
+            <a href="chatbot.html"       class="mobile-nav__link">Speak with Sunny</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ── Hero ─────────────────────────────────────────── -->
+        <section class="about-hero">
+            <div class="container about-hero__container">
+                <div class="about-hero__image-wrapper">
+                    <img src="./src/assets/images/sunny-profile.jpg" alt="Sunny Reddy" class="about-hero__image">
+                </div>
+
+                <div class="about-hero__content">
+                    <span class="overline">Entrepreneur · Governor · Leader</span>
+                    <h1 class="about-hero__title">News &amp; <span class="text-accent">Media</span></h1>
+                    <p class="about-hero__description">
+                        A Michigan-based entrepreneur and public leader serving as President of VoIP Office,
+                        elected Governor of Wayne State University, and Co-Chair &amp; Treasurer of the Michigan
+                        Republican Party. Committed to practical leadership, innovation, and long-term community impact.
+                    </p>
+                    <div class="role-badges">
+                        <span class="role-badge">President, VoIP Office</span>
+                        <span class="role-badge">Governor, Wayne State University</span>
+                        <span class="role-badge">Co-Chair, Michigan GOP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Quick Facts ────────────────────────────────────
+        <section class="section quick-facts">
+            <div class="container">
+                <h2 class="quick-facts__title">Quick Facts</h2>
+                <ul class="quick-facts__list">
+                    <li>J.D. (Law degree), Wayne State University</li>
+                    <li>B.A. in Political Science, Wayne State University</li>
+                    <li>Board Member, Michigan Opera Theatre</li>
+                    <li>President, VoIP Office — cloud communications leader</li>
+                    <li>Elected Alumnus Governor, Wayne State University Board of Governors</li>
+                    <li>Co-Chair &amp; Treasurer, Michigan Republican Party</li>
+                    <li>Passionate about practical leadership, STEM, and affordable education</li>
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- ── Recent Events ────────────────────────────────── -->
+        <section class="section section--alt" id="events">
+            <div class="container">
+                <span class="overline">Recent Activity</span>
+                <h2 class="section-title">Events Attended</h2>
+
+                <div class="events-grid">
+
+                    <!-- Event 1 -->
+                    <div class="event-card">
+                        <div class="event-card__tags">
+                            <span class="event-card__date-tag">Feb 24 · 2026</span>
+                            <span class="event-card__venue-tag">Troy, MI</span>
+                        </div>
+                        <h3 class="event-card__title">Southeastern Michigan MIGOP Headquarters Grand Opening</h3>
+                        <p class="event-card__description">Brief description of the event and Sunny's role or participation. Add details here.</p>
+                    </div>
+
+                    <!-- Event 2 — placeholder -->
+                    <div class="event-card">
+                        <div class="event-card__tags">
+                            <span class="event-card__date-tag">Month · Year</span>
+                            <span class="event-card__venue-tag">Venue / Location</span>
+                        </div>
+                        <h3 class="event-card__title">Event Name</h3>
+                        <p class="event-card__description">Brief description of the event and Sunny's role or participation. Add details here.</p>
+                    </div>
+
+                    <!-- Event 3 — placeholder -->
+                    <div class="event-card">
+                        <div class="event-card__tags">
+                            <span class="event-card__date-tag">Month · Year</span>
+                            <span class="event-card__venue-tag">Venue / Location</span>
+                        </div>
+                        <h3 class="event-card__title">Event Name</h3>
+                        <p class="event-card__description">Brief description of the event and Sunny's role or participation. Add details here.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Speeches ──────────────────────────────────────── -->
+        <section class="section" id="speeches">
+            <div class="container">
+                <span class="overline">Public Speaking</span>
+                <h2 class="section-title">Speeches &amp; Talks</h2>
+
+                <div class="speeches-list">
+
+                    <!-- Speech 1 — India Abroad -->
+                    <div class="speech-item">
+                        <div class="speech-item__meta">
+                            <span class="speech-item__date">2025</span>
+                            <span class="speech-item__tag">Speech</span>
+                        </div>
+                        <div class="speech-item__content">
+                            <h3 class="speech-item__title">Sunny Reddy on Trump, H-1B Reforms, and Indian Americans' Hopes</h3>
+                            <p class="speech-item__venue">India Abroad</p>
+                            <p class="speech-item__description">Sunny Reddy shares his perspective on the Trump administration's H-1B visa reforms and what they mean for Indian Americans — discussing community hopes, political engagement, and the future of immigration policy in the United States.</p>
+                        </div>
+                        <div class="speech-item__links">
+                            <a href="https://www.youtube.com/watch?v=gt92i13J008" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Watch Video</a>
+                        </div>
+                    </div>
+
+                    <!-- Speech 2 — Panel Discussion -->
+                    <div class="speech-item">
+                        <div class="speech-item__meta">
+                            <span class="speech-item__date">2024</span>
+                            <span class="speech-item__tag">Panel</span>
+                        </div>
+                        <div class="speech-item__content">
+                            <h3 class="speech-item__title">Tackling Education, Cultural Values, and the American Dream</h3>
+                            <p class="speech-item__venue">Sunny Reddy for Wayne State</p>
+                            <p class="speech-item__description">In this exclusive interview, Sunny Reddy discusses his priorities as a Wayne State University Governor — focusing on education accessibility, the preservation of cultural values, and what the American Dream means to the next generation of leaders.</p>
+                        </div>
+                        <div class="speech-item__links">
+                            <a href="https://www.youtube.com/watch?v=PdoTiaBKlKc" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Watch Video</a>
+                        </div>
+                    </div>
+
+                    <!-- Speech 3 — Podcast -->
+                    <div class="speech-item">
+                        <div class="speech-item__meta">
+                            <span class="speech-item__date">2025</span>
+                            <span class="speech-item__tag">Podcast</span>
+                        </div>
+                        <div class="speech-item__content">
+                            <h3 class="speech-item__title">The NRI Vision: Progress, Community &amp; Leadership</h3>
+                            <p class="speech-item__venue">Sanjam Talks — NRI Stories &amp; Indian Inspirations</p>
+                            <p class="speech-item__description">Part 2 of a candid podcast conversation with Sunny Reddy, exploring his NRI journey, vision for progress within the Indian American community, and the responsibilities of diaspora leaders in shaping both American and Indian futures.</p>
+                        </div>
+                        <div class="speech-item__links">
+                            <a href="https://www.youtube.com/watch?v=6iyaX7Xb3ag" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Watch Podcast</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Articles & Blogs ──────────────────────────────── -->
+        <section class="section section--alt" id="articles">
+            <div class="container">
+                <span class="overline">Writing &amp; Media</span>
+                <h2 class="section-title">Articles &amp; Blogs</h2>
+
+                <div class="articles-grid">
+
+                    <!-- Article 1 — Financial Express -->
+                    <div class="article-card">
+                        <div class="article-card__header">
+                            <span class="article-card__category">Article</span>
+                            <span class="article-card__date">December 2025</span>
+                        </div>
+                        <h3 class="article-card__title">Who is Sunny Reddy? Indian-American Entrepreneur Elected as Michigan GOP Co-Chair</h3>
+                        <p class="article-card__excerpt">Sunny Reddy, founder and president of VoIP Office, made history as the first Indian American elected Co-Chair of the Michigan Republican Party. A Wayne State University Governor and longtime community leader, Reddy was unanimously elected and pledged to strengthen party infrastructure ahead of Michigan's competitive 2026 election cycle.</p>
+                        <div class="article-card__footer">
+                            <span class="article-card__publication">The Financial Express</span>
+                            <a href="https://www.financialexpress.com/world-news/us-news/who-is-sunny-reddy-indian-american-entrepreneur-elected-as-michigan-gop-co-chair/4069783/" target="_blank" rel="noopener" class="article-card__link">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 — placeholder -->
+                    <div class="article-card">
+                        <div class="article-card__header">
+                            <span class="article-card__category">Blog</span>
+                            <span class="article-card__date">Date TBD</span>
+                        </div>
+                        <h3 class="article-card__title">Blog Post Title Goes Here</h3>
+                        <p class="article-card__excerpt">Brief excerpt or summary of the blog post content. Describe the key insights and what readers will take away from this post.</p>
+                        <div class="article-card__footer">
+                            <span class="article-card__publication">Publication / Platform</span>
+                            <a href="#" class="article-card__link">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 — placeholder -->
+                    <div class="article-card">
+                        <div class="article-card__header">
+                            <span class="article-card__category">Op-Ed</span>
+                            <span class="article-card__date">Date TBD</span>
+                        </div>
+                        <h3 class="article-card__title">Op-Ed Title Goes Here</h3>
+                        <p class="article-card__excerpt">Brief excerpt or summary of the op-ed content. Describe the position taken, the key argument, and the intended audience or publication.</p>
+                        <div class="article-card__footer">
+                            <span class="article-card__publication">Publication / Platform</span>
+                            <a href="#" class="article-card__link">Read More →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Achievements ──────────────────────────────────── -->
+        <section class="section" id="achievements">
+            <div class="container">
+                <span class="overline">Milestones</span>
+                <h2 class="section-title">Achievements</h2>
+
+                <div class="achievements-timeline">
+
+                    <!-- Achievement 1 -->
+                    <div class="achievement-item">
+                        <div class="achievement-item__year">2025</div>
+                        <h3 class="achievement-item__title">Elected Co-Chair &amp; Treasurer, Michigan Republican Party</h3>
+                        <p class="achievement-item__description">Unanimously elected Co-Chair and Treasurer of the Michigan GOP — becoming the first Indian American to hold a partisan leadership position within Michigan's Republican Party. Pledged to strengthen fundraising and party infrastructure ahead of the 2026 election cycle.</p>
+                    </div>
+
+                    <!-- Achievement 2 -->
+                    <div class="achievement-item">
+                        <div class="achievement-item__year">2024</div>
+                        <h3 class="achievement-item__title">Elected Alumnus Governor, Wayne State University Board of Governors</h3>
+                        <p class="achievement-item__description">Elected by Wayne State alumni to serve on the university's highest governing body. In this role, Sunny champions affordable education, STEM initiatives, and practical pathways that connect students to real-world careers.</p>
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="achievement-item">
+                        <div class="achievement-item__year">Est.</div>
+                        <h3 class="achievement-item__title">President &amp; Founder, VoIP Office</h3>
+                        <p class="achievement-item__description">Founded and leads VoIP Office, a Michigan-based cloud communications company delivering enterprise-grade phone systems and unified communications solutions to businesses nationwide. A testament to building companies that directly solve real-world problems.</p>
+                    </div>
+
+                    <!-- Achievement 4 -->
+                    <div class="achievement-item">
+                        <div class="achievement-item__year">Board</div>
+                        <h3 class="achievement-item__title">Board Member, Michigan Opera Theatre</h3>
+                        <p class="achievement-item__description">Serves on the board of one of the Midwest's premier performing arts institutions, supporting arts, culture, and community enrichment in Detroit and across Michigan.</p>
+                    </div>
+
+                    <!-- Achievement 5 -->
+                    <div class="achievement-item">
+                        <div class="achievement-item__year">J.D.</div>
+                        <h3 class="achievement-item__title">Juris Doctor, Wayne State University Law School</h3>
+                        <p class="achievement-item__description">Earned a law degree from Wayne State University, providing the legal foundation that informs Sunny's approach to governance, policy, and organizational leadership across all roles he serves.</p>
+                    </div>
+
+                    <!-- Achievement 6 -->
+                    <div class="achievement-item">
+                        <div class="achievement-item__year">B.A.</div>
+                        <h3 class="achievement-item__title">B.A. in Political Science, Wayne State University</h3>
+                        <p class="achievement-item__description">Graduated with a Bachelor of Arts in Political Science from Wayne State University — the academic foundation for a career dedicated to practical leadership, civic engagement, and community-driven public service.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Three Column ──────────────────────────────────── -->
+        <section class="section section--alt three-col-section">
+            <div class="container">
+                <div class="three-col-grid">
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">Public Service</h3>
+                        <p class="info-card__text">
+                            As a Wayne State Board of Governors member, Sunny has
+                            worked to make higher education more accessible and affordable,
+                            championing initiatives that give students real-world pathways
+                            through education and practical experience.
+                        </p>
+                        <a href="wayne-state.html" class="btn btn--primary btn--sm">Learn More</a>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">Entrepreneurship</h3>
+                        <p class="info-card__text">
+                            From cloud communications to practice management platforms,
+                            Sunny has built companies that directly meet community needs,
+                            driven by real-world challenges and tested by user feedback.
+                        </p>
+                        <a href="voip-office.html" class="btn btn--primary btn--sm">Learn More</a>
+                    </div>
+
+                    <div class="info-card">
+                        <h3 class="info-card__title">Community-Lifting Work</h3>
+                        <p class="info-card__text">
+                            Sunny's approach centers on direct community engagement,
+                            supporting projects in Detroit and beyond that bring real
+                            value and last beyond short-term attention cycles.
+                        </p>
+                        <a href="michigan-gop.html" class="btn btn--primary btn--sm">Learn More</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── The Person Behind The Work ───────────────────── -->
+        <section class="section person-section">
+            <div class="container">
+                <h2 class="section-title">The Person Behind The Work</h2>
+
+                <div class="person-content">
+                    <p>
+                        It's in public places and windowless rooms where Sunny works, not
+                        glitzy galas or carefully curated press — the practical realities of
+                        what it takes to make change happen, the meetings, the follow-through,
+                        and the commitment to showing up. When he's not in a board meeting,
+                        you'll find him turning his sharp mind to whatever problem is in front of him.
+                    </p>
+
+                    <p>
+                        While, like others, he's spent time navigating or thinking about
+                        complex policy decisions — things like access to healthcare, worker
+                        protections, economic development, or education — Sunny's drawn to
+                        work that reflects real outcomes, not empty promises.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Publicly Stated Principles ───────────────────── -->
+        <section class="section principles-section">
+            <div class="container">
+                <h2 class="section-title">Publicly Stated Principles</h2>
+
+                <div class="accordion">
+
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <span>STEM &amp; Innovation</span>
+                            <span class="accordion__icon">+</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Content about STEM and Innovation principles — add Sunny's public statements, positions, and initiatives here.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <span>Affordable Education</span>
+                            <span class="accordion__icon">+</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Content about Affordable Education principles — add Sunny's public statements, positions, and board actions here.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <span>Economic Development</span>
+                            <span class="accordion__icon">+</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Content about Economic Development principles — add Sunny's public statements and community development initiatives here.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item">
+                        <button class="accordion__header">
+                            <span>Cloud Communications &amp; Technology</span>
+                            <span class="accordion__icon">+</span>
+                        </button>
+                        <div class="accordion__content">
+                            <p>Content about Cloud Communications and Technology principles — add Sunny's vision for the industry and public statements here.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Speak with Sunny CTA ──────────────────────────── -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-center">
+                    <h2 class="cta-center__heading">Speak with Sunny</h2>
+                    <p class="cta-center__text">
+                        Have questions about leadership, cloud communications, education, or
+                        community engagement? Start a conversation with Sunny's AI counterpart.
+                    </p>
+                    <a href="chatbot.html" class="btn btn--primary">Access Sunny AI</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <button class="chat-widget__trigger" aria-label="Open chat">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+        </button>
+        <elevenlabs-convai class="sunny-float" agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"></elevenlabs-convai>
+    </div>
+
+    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/accordion.js"></script>
+</body>
+</html>
