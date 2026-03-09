@@ -13,26 +13,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./src/scss/main.scss" />
 </head>
 
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container header__container">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <div class="logo__icon">SR</div>
             </a>
 
             <nav class="nav">
-                
-                <a href="voip-office.html"   class="nav__link">VoIP Office</a>
-                <a href="wayne-state.html"   class="nav__link">Wayne State</a>
-                <a href="michigan-gop.html"  class="nav__link">Michigan GOP</a>
-                <a href="news.html"         class="nav__link nav__link--active">News</a>
-                <a href="contact.html"       class="nav__link">Contact</a>
-                <a href="chatbot.html"       class="btn btn--primary">Speak with Sunny</a>
+                <a href="/voip-office.html" class="nav__link">VoIP Office</a>
+                <a href="/wayne-state.html" class="nav__link">Wayne State</a>
+                <a href="/michigan-gop.html" class="nav__link">Michigan GOP</a>
+                <a href="/news.html" class="nav__link nav__link--active">News</a>
+                <a href="/contact.html" class="nav__link">Contact</a>
+                <a href="/chatbot.html" class="btn btn--primary">Speak with Sunny</a>
             </nav>
 
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -43,23 +40,22 @@
         </div>
 
         <nav class="mobile-nav">
-            
-            <a href="voip-office.html"   class="mobile-nav__link">VoIP Office</a>
-            <a href="wayne-state.html"   class="mobile-nav__link">Wayne State</a>
-            <a href="michigan-gop.html"  class="mobile-nav__link">Michigan GOP</a>
-            <a href="news.html"         class="mobile-nav__link">News</a>
-            <a href="contact.html"       class="mobile-nav__link">Contact</a>
-            <a href="chatbot.html"       class="mobile-nav__link">Speak with Sunny</a>
+            <a href="/voip-office.html" class="mobile-nav__link">VoIP Office</a>
+            <a href="/wayne-state.html" class="mobile-nav__link">Wayne State</a>
+            <a href="/michigan-gop.html" class="mobile-nav__link">Michigan GOP</a>
+            <a href="/news.html" class="mobile-nav__link">News</a>
+            <a href="/contact.html" class="mobile-nav__link">Contact</a>
+            <a href="/chatbot.html" class="mobile-nav__link">Speak with Sunny</a>
         </nav>
     </header>
 
     <main>
 
-        <!-- ── Hero ─────────────────────────────────────────── -->
+        <!-- Hero -->
         <section class="about-hero">
             <div class="container about-hero__container">
                 <div class="about-hero__image-wrapper">
-                    <img src="./src/assets/images/sunny-profile.jpg" alt="Sunny Reddy" class="about-hero__image">
+                    <img src="/src/assets/images/sunny-profile.jpg" alt="Sunny Reddy" class="about-hero__image">
                 </div>
 
                 <div class="about-hero__content">
@@ -79,31 +75,12 @@
             </div>
         </section>
 
-        <!-- ── Quick Facts ────────────────────────────────────
-        <section class="section quick-facts">
-            <div class="container">
-                <h2 class="quick-facts__title">Quick Facts</h2>
-                <ul class="quick-facts__list">
-                    <li>J.D. (Law degree), Wayne State University</li>
-                    <li>B.A. in Political Science, Wayne State University</li>
-                    <li>Board Member, Michigan Opera Theatre</li>
-                    <li>President, VoIP Office — cloud communications leader</li>
-                    <li>Elected Alumnus Governor, Wayne State University Board of Governors</li>
-                    <li>Co-Chair &amp; Treasurer, Michigan Republican Party</li>
-                    <li>Passionate about practical leadership, STEM, and affordable education</li>
-                </ul>
-            </div>
-        </section> -->
-
-        <!-- ── Recent Events ────────────────────────────────── -->
         <section class="section section--alt" id="events">
             <div class="container">
                 <span class="overline">Recent Activity</span>
                 <h2 class="section-title">Events Attended</h2>
 
                 <div class="events-grid">
-
-                    <!-- Event 1 -->
                     <div class="event-card">
                         <div class="event-card__tags">
                             <span class="event-card__date-tag">Feb 24 · 2026</span>
@@ -113,7 +90,6 @@
                         <p class="event-card__description">Brief description of the event and Sunny's role or participation. Add details here.</p>
                     </div>
 
-                    <!-- Event 2 — placeholder -->
                     <div class="event-card">
                         <div class="event-card__tags">
                             <span class="event-card__date-tag">Month · Year</span>
@@ -123,7 +99,6 @@
                         <p class="event-card__description">Brief description of the event and Sunny's role or participation. Add details here.</p>
                     </div>
 
-                    <!-- Event 3 — placeholder -->
                     <div class="event-card">
                         <div class="event-card__tags">
                             <span class="event-card__date-tag">Month · Year</span>
@@ -132,20 +107,16 @@
                         <h3 class="event-card__title">Event Name</h3>
                         <p class="event-card__description">Brief description of the event and Sunny's role or participation. Add details here.</p>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ── Speeches ──────────────────────────────────────── -->
         <section class="section" id="speeches">
             <div class="container">
                 <span class="overline">Public Speaking</span>
                 <h2 class="section-title">Speeches &amp; Talks</h2>
 
                 <div class="speeches-list">
-
-                    <!-- Speech 1 — India Abroad -->
                     <div class="speech-item">
                         <div class="speech-item__meta">
                             <span class="speech-item__date">2025</span>
@@ -161,7 +132,6 @@
                         </div>
                     </div>
 
-                    <!-- Speech 2 — Panel Discussion -->
                     <div class="speech-item">
                         <div class="speech-item__meta">
                             <span class="speech-item__date">2024</span>
@@ -177,7 +147,6 @@
                         </div>
                     </div>
 
-                    <!-- Speech 3 — Podcast -->
                     <div class="speech-item">
                         <div class="speech-item__meta">
                             <span class="speech-item__date">2025</span>
@@ -192,20 +161,16 @@
                             <a href="https://www.youtube.com/watch?v=6iyaX7Xb3ag" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Watch Podcast</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ── Articles & Blogs ──────────────────────────────── -->
         <section class="section section--alt" id="articles">
             <div class="container">
                 <span class="overline">Writing &amp; Media</span>
                 <h2 class="section-title">Articles &amp; Blogs</h2>
 
                 <div class="articles-grid">
-
-                    <!-- Article 1 — Financial Express -->
                     <div class="article-card">
                         <div class="article-card__header">
                             <span class="article-card__category">Article</span>
@@ -219,7 +184,6 @@
                         </div>
                     </div>
 
-                    <!-- Article 2 — placeholder -->
                     <div class="article-card">
                         <div class="article-card__header">
                             <span class="article-card__category">Blog</span>
@@ -233,7 +197,6 @@
                         </div>
                     </div>
 
-                    <!-- Article 3 — placeholder -->
                     <div class="article-card">
                         <div class="article-card__header">
                             <span class="article-card__category">Op-Ed</span>
@@ -246,70 +209,58 @@
                             <a href="#" class="article-card__link">Read More →</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ── Achievements ──────────────────────────────────── -->
         <section class="section" id="achievements">
             <div class="container">
                 <span class="overline">Milestones</span>
                 <h2 class="section-title">Achievements</h2>
 
                 <div class="achievements-timeline">
-
-                    <!-- Achievement 1 -->
                     <div class="achievement-item">
                         <div class="achievement-item__year">2025</div>
                         <h3 class="achievement-item__title">Elected Co-Chair &amp; Treasurer, Michigan Republican Party</h3>
                         <p class="achievement-item__description">Unanimously elected Co-Chair and Treasurer of the Michigan GOP — becoming the first Indian American to hold a partisan leadership position within Michigan's Republican Party. Pledged to strengthen fundraising and party infrastructure ahead of the 2026 election cycle.</p>
                     </div>
 
-                    <!-- Achievement 2 -->
                     <div class="achievement-item">
                         <div class="achievement-item__year">2024</div>
                         <h3 class="achievement-item__title">Elected Alumnus Governor, Wayne State University Board of Governors</h3>
                         <p class="achievement-item__description">Elected by Wayne State alumni to serve on the university's highest governing body. In this role, Sunny champions affordable education, STEM initiatives, and practical pathways that connect students to real-world careers.</p>
                     </div>
 
-                    <!-- Achievement 3 -->
                     <div class="achievement-item">
                         <div class="achievement-item__year">Est.</div>
                         <h3 class="achievement-item__title">Founder & CEO &amp; Founder, VoIP Office</h3>
                         <p class="achievement-item__description">Founded and leads VoIP Office, a Michigan-based cloud communications company delivering enterprise-grade phone systems and unified communications solutions to businesses nationwide. A testament to building companies that directly solve real-world problems.</p>
                     </div>
 
-                    <!-- Achievement 4 -->
                     <div class="achievement-item">
                         <div class="achievement-item__year">Board</div>
                         <h3 class="achievement-item__title">Board Member, Michigan Opera Theatre</h3>
                         <p class="achievement-item__description">Serves on the board of one of the Midwest's premier performing arts institutions, supporting arts, culture, and community enrichment in Detroit and across Michigan.</p>
                     </div>
 
-                    <!-- Achievement 5 -->
                     <div class="achievement-item">
                         <div class="achievement-item__year">J.D.</div>
                         <h3 class="achievement-item__title">Juris Doctor, Wayne State University Law School</h3>
                         <p class="achievement-item__description">Earned a law degree from Wayne State University, providing the legal foundation that informs Sunny's approach to governance, policy, and organizational leadership across all roles he serves.</p>
                     </div>
 
-                    <!-- Achievement 6 -->
                     <div class="achievement-item">
                         <div class="achievement-item__year">B.A.</div>
                         <h3 class="achievement-item__title">B.A. in Political Science, Wayne State University</h3>
                         <p class="achievement-item__description">Graduated with a Bachelor of Arts in Political Science from Wayne State University — the academic foundation for a career dedicated to practical leadership, civic engagement, and community-driven public service.</p>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ── Three Column ──────────────────────────────────── -->
         <section class="section section--alt three-col-section">
             <div class="container">
                 <div class="three-col-grid">
-
                     <div class="info-card">
                         <h3 class="info-card__title">Public Service</h3>
                         <p class="info-card__text">
@@ -318,7 +269,7 @@
                             championing initiatives that give students real-world pathways
                             through education and practical experience.
                         </p>
-                        <a href="wayne-state.html" class="btn btn--primary btn--sm">Learn More</a>
+                        <a href="/wayne-state.html" class="btn btn--primary btn--sm">Learn More</a>
                     </div>
 
                     <div class="info-card">
@@ -328,7 +279,7 @@
                             Sunny has built companies that directly meet community needs,
                             driven by real-world challenges and tested by user feedback.
                         </p>
-                        <a href="voip-office.html" class="btn btn--primary btn--sm">Learn More</a>
+                        <a href="/voip-office.html" class="btn btn--primary btn--sm">Learn More</a>
                     </div>
 
                     <div class="info-card">
@@ -338,14 +289,12 @@
                             supporting projects in Detroit and beyond that bring real
                             value and last beyond short-term attention cycles.
                         </p>
-                        <a href="michigan-gop.html" class="btn btn--primary btn--sm">Learn More</a>
+                        <a href="/michigan-gop.html" class="btn btn--primary btn--sm">Learn More</a>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ── The Person Behind The Work ───────────────────── -->
         <section class="section person-section">
             <div class="container">
                 <h2 class="section-title">The Person Behind The Work</h2>
@@ -369,13 +318,11 @@
             </div>
         </section>
 
-        <!-- ── Publicly Stated Principles ───────────────────── -->
         <section class="section principles-section">
             <div class="container">
                 <h2 class="section-title">Publicly Stated Principles</h2>
 
                 <div class="accordion">
-
                     <div class="accordion__item">
                         <button class="accordion__header">
                             <span>STEM &amp; Innovation</span>
@@ -415,12 +362,10 @@
                             <p>Content about Cloud Communications and Technology principles — add Sunny's vision for the industry and public statements here.</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ── Speak with Sunny CTA ──────────────────────────── -->
         <section class="section">
             <div class="container">
                 <div class="cta-center">
@@ -429,7 +374,7 @@
                         Have questions about leadership, cloud communications, education, or
                         community engagement? Start a conversation with Sunny's AI counterpart.
                     </p>
-                    <a href="chatbot.html" class="btn btn--primary">Access Sunny AI</a>
+                    <a href="/chatbot.html" class="btn btn--primary">Access Sunny AI</a>
                 </div>
             </div>
         </section>
@@ -447,7 +392,7 @@
     </div>
 
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-    <script src="./src/js/main.js"></script>
-    <script src="./src/js/accordion.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/accordion.js"></script>
 </body>
 </html>

@@ -13,143 +13,190 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet" />
-
-
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header__container">
-      <a href="index.html" class="logo">
-        <div class="logo__icon">
-      <img src="./src/assets/images/hero-image.jpg" alt="Sunny Reddy"></div>
-      </a>
 
-      <nav class="nav">
-        <a href="voip-office.html" class="nav__link">VoIP Office</a>
-        <a href="wayne-state.html" class="nav__link">Wayne State</a>
-        <a href="michigan-gop.html" class="nav__link">Michigan GOP</a>
-        <a href="news.html" class="nav__link">News</a>
-        <a href="contact.html" class="nav__link">Contact</a>
-        <a href="chatbot.html" class="btn btn--primary">Speak with Sunny</a>
-      </nav>
+<!-- Header -->
+<header class="header">
+  <div class="container header__container">
 
-      <button class="menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+    <a href="/" class="logo">
+      <div class="logo__icon">
+        <img src="/src/assets/images/hero-image.jpg" alt="Sunny Reddy">
+      </div>
+    </a>
 
-    <nav class="mobile-nav">
-      <a href="voip-office.html" class="mobile-nav__link">VoIP Office</a>
-      <a href="wayne-state.html" class="mobile-nav__link">Wayne State</a>
-      <a href="michigan-gop.html" class="mobile-nav__link">Michigan GOP</a>
-      <a href="news.html" class="mobile-nav__link">News</a>
-      <a href="contact.html" class="mobile-nav__link">Contact</a>
-      <a href="chatbot.html" class="mobile-nav__link">Speak with Sunny</a>
+    <nav class="nav">
+      <a href="/voip-office.html" class="nav__link">VoIP Office</a>
+      <a href="/wayne-state.html" class="nav__link">Wayne State</a>
+      <a href="/michigan-gop.html" class="nav__link">Michigan GOP</a>
+      <a href="/news.html" class="nav__link">News</a>
+      <a href="/contact.html" class="nav__link">Contact</a>
+      <a href="/chatbot.html" class="btn btn--primary">Speak with Sunny</a>
     </nav>
-  </header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero__container">
-        <div class="hero__content">
-          <span class="overline">Executive · Governor · Leader</span>
-          <h1 class="hero__title">
-            <span class="text-underline-accent">Sunny Reddy</span>
-          </h1>
-
-          <div class="role-badges">
-            <span class="role-badge">President, VoIP Office</span>
-            <span class="role-badge">Governor, Wayne State University</span>
-            <span class="role-badge">Co-Chair, Michigan GOP</span>
-          </div>
-
-          <p class="hero__description">
-            A business leader, elected university governor, and party officer whose work
-            spans cloud communications technology, higher education, and organizational
-            leadership united by a commitment to innovation, excellence, and long-term
-            impact.
-          </p>
-        </div>
-
-        <div class="hero__image">
-          <img src="./src/assets/images/hero.jpeg" alt="Sunny Reddy — President, Governor, Leader" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Role overview cards -->
-    <section class="section section--alt">
-      <div class="container">
-        <h2 class="section-title">Leadership Across Three Domains</h2>
-
-        <div class="three-col-grid">
-          <div class="info-card">
-            <h3 class="info-card__title">President, VoIP Office</h3>
-            <p class="info-card__text">
-              Executive leadership focused on innovation, growth, and customer success
-              in cloud-based business communications. Driving technology advancements
-              and operational excellence across international markets.
-            </p>
-            <a href="voip-office.html" class="btn btn--primary btn--sm">Learn More</a>
-          </div>
-
-          <div class="info-card">
-            <h3 class="info-card__title">Governor, Wayne State University</h3>
-            <p class="info-card__text">
-              An elected alumnus serving on the Board of Governors, committed to
-              academic excellence, student success, and strengthening higher education
-              opportunity for future generations.
-            </p>
-            <a href="wayne-state.html" class="btn btn--primary btn--sm">Learn More</a>
-          </div>
-
-          <div class="info-card">
-            <h3 class="info-card__title">Co-Chair, Michigan GOP</h3>
-            <p class="info-card__text">
-              Dual leadership roles focused on financial accountability, organizational
-              integrity, and long-term stability for the Michigan Republican Party.
-            </p>
-            <a href="michigan-gop.html" class="btn btn--primary btn--sm">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Speak with Sunny CTA -->
-    <section id="speak" class="section">
-      <div class="container">
-        <div class="cta-center">
-          <h2 class="cta-center__heading">Speak with Sunny</h2>
-          <p class="cta-center__text">
-            Have questions about leadership, cloud communications, education, or
-            community engagement? Start a conversation with Sunny's AI counterpart.
-          </p>
-          <a href="chatbot.html" class="btn btn--primary">Access Sunny AI</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Chat Widget -->
-  <div class="chat-widget">
-    <button class="chat-widget__trigger" aria-label="Open chat">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-      </svg>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-
-    <elevenlabs-convai class="sunny-float" agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"></elevenlabs-convai>
   </div>
 
-  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+  <nav class="mobile-nav">
+    <a href="/voip-office.html" class="mobile-nav__link">VoIP Office</a>
+    <a href="/wayne-state.html" class="mobile-nav__link">Wayne State</a>
+    <a href="/michigan-gop.html" class="mobile-nav__link">Michigan GOP</a>
+    <a href="/news.html" class="mobile-nav__link">News</a>
+    <a href="/contact.html" class="mobile-nav__link">Contact</a>
+    <a href="/chatbot.html" class="mobile-nav__link">Speak with Sunny</a>
+  </nav>
+</header>
 
-  <!-- Vite entry (MODULE) -->
-  <script type="module" src="/src/js/main.js"></script>
+
+<main>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero__container">
+
+    <div class="hero__content">
+
+      <span class="overline">Executive · Governor · Leader</span>
+
+      <h1 class="hero__title">
+        <span class="text-underline-accent">Sunny Reddy</span>
+      </h1>
+
+      <div class="role-badges">
+        <span class="role-badge">President, VoIP Office</span>
+        <span class="role-badge">Governor, Wayne State University</span>
+        <span class="role-badge">Co-Chair, Michigan GOP</span>
+      </div>
+
+      <p class="hero__description">
+        A business leader, elected university governor, and party officer whose work
+        spans cloud communications technology, higher education, and organizational
+        leadership united by a commitment to innovation, excellence, and long-term
+        impact.
+      </p>
+
+    </div>
+
+    <div class="hero__image">
+      <img src="/src/assets/images/hero.jpeg" alt="Sunny Reddy — President, Governor, Leader">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Role overview cards -->
+<section class="section section--alt">
+
+  <div class="container">
+
+    <h2 class="section-title">Leadership Across Three Domains</h2>
+
+    <div class="three-col-grid">
+
+      <div class="info-card">
+        <h3 class="info-card__title">President, VoIP Office</h3>
+
+        <p class="info-card__text">
+          Executive leadership focused on innovation, growth, and customer success
+          in cloud-based business communications. Driving technology advancements
+          and operational excellence across international markets.
+        </p>
+
+        <a href="/voip-office.html" class="btn btn--primary btn--sm">Learn More</a>
+      </div>
+
+
+      <div class="info-card">
+        <h3 class="info-card__title">Governor, Wayne State University</h3>
+
+        <p class="info-card__text">
+          An elected alumnus serving on the Board of Governors, committed to
+          academic excellence, student success, and strengthening higher education
+          opportunity for future generations.
+        </p>
+
+        <a href="/wayne-state.html" class="btn btn--primary btn--sm">Learn More</a>
+      </div>
+
+
+      <div class="info-card">
+        <h3 class="info-card__title">Co-Chair, Michigan GOP</h3>
+
+        <p class="info-card__text">
+          Dual leadership roles focused on financial accountability, organizational
+          integrity, and long-term stability for the Michigan Republican Party.
+        </p>
+
+        <a href="/michigan-gop.html" class="btn btn--primary btn--sm">Learn More</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Speak with Sunny CTA -->
+<section id="speak" class="section">
+
+  <div class="container">
+
+    <div class="cta-center">
+
+      <h2 class="cta-center__heading">Speak with Sunny</h2>
+
+      <p class="cta-center__text">
+        Have questions about leadership, cloud communications, education, or
+        community engagement? Start a conversation with Sunny's AI counterpart.
+      </p>
+
+      <a href="/chatbot.html" class="btn btn--primary">Access Sunny AI</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+
+  <button class="chat-widget__trigger" aria-label="Open chat">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+      />
+
+    </svg>
+  </button>
+
+  <elevenlabs-convai
+    class="sunny-float"
+    agent-id="agent_1401ke7ksdgpejdsxgmtf51r5mwq"
+  ></elevenlabs-convai>
+
+</div>
+
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+
+<!-- Vite entry -->
+<script type="module" src="/src/js/main.js"></script>
+
 </body>
 </html>
